@@ -57,6 +57,7 @@ header {
   position: absolute;
   font-size: 5em;
   color: #000;
+  font-weight: 700;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -91,4 +92,24 @@ header {
   font-size: 1em;
   color: #fff;
   font-weight: 300;
+}
+
+.custom-shape-divider-top-1706007119 {
+  /* position: absolute; */
+  /* bottom: 0; */
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1706007119 svg {
+  position: relative;
+  display: block;
+  width: calc(135% + 1.3px);
+  height: 197px;
+}
+
+.custom-shape-divider-top-1706007119 .shape-fill {
+  fill: #003329;
 }
