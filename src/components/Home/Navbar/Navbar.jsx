@@ -1,14 +1,14 @@
 import "./Navbar.css";
 import React, { useEffect } from "react";
-import hill1 from "../../../images/hill1.png";
-import hill2 from "../../../images/hill2.png";
-import hill3 from "../../../images/hill3.png";
-import hill4 from "../../../images/hill4.png";
-import hill5 from "../../../images/hill5.png";
-import tree from "../../../images/tree.png";
+import hill1 from "../../../images/valley1.png";
+import hill2 from "../../../images/valley2.png";
+import hill3 from "../../../images/valley3.png";
+import hill4 from "../../../images/valley4.png";
+import hill5 from "../../../images/valley5.png";
+import tree from "../../../images/treePine2.png";
 import leaf from "../../../images/leaf.png";
 import plant from "../../../images/plant.png";
-import cat from "../../../images/cat.png";
+import bg from "../../../images/bg.png";
 
 const Navbar = () => {
   useEffect(() => {
@@ -35,10 +35,8 @@ const Navbar = () => {
   return (
     <>
       <header>
-        <h2 class="logo">Logo</h2>
         <nav class="navigation">
           <a href="#" class="active">
-            {" "}
             Home
           </a>
           <a href="#"> About</a>
@@ -48,15 +46,14 @@ const Navbar = () => {
       </header>
 
       <section className="parallax">
-        <img src={hill1} id="hill1" alt="Hill 1" />
+        <img src={bg} id="bg" alt="Hill 5" />
+        <img src={hill5} id="hill5" alt="Hill 5" />
         <img src={hill2} id="hill2" alt="Hill 2" />
         <img src={hill3} id="hill3" alt="Hill 3" />
         <img src={hill4} id="hill4" alt="Hill 4" />
-        <img src={hill5} id="hill5" alt="Hill 5" />
+        <img src={hill1} id="hill1" alt="Hill 1" />
         <img src={tree} id="tree" alt="Tree" />{" "}
-        <img src={leaf} id="leaf" alt="leaf" />
         <h2 id="text">FuurEver-PawFect</h2>
-        <img src={plant} id="plant" alt="Plant" />
       </section>
 
       <section className="sec">
