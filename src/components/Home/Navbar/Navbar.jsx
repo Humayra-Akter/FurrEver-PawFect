@@ -1,5 +1,5 @@
 import "./Navbar.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import hill1 from "../../../images/valley1.png";
 import hill2 from "../../../images/valley2.png";
 import hill3 from "../../../images/valley3.png";
@@ -11,32 +11,25 @@ import plant from "../../../images/plant.png";
 import bg from "../../../images/bg.png";
 
 const Navbar = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
   useEffect(() => {
-    let text = document.getElementById("text");
-    let leaf = document.getElementById("leaf");
-    let hill1 = document.getElementById("hill1");
-    let hill4 = document.getElementById("hill4");
-    let hill5 = document.getElementById("hill5");
-    let cat = document.getElementById("cat");
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
 
-    window.addEventListener("scroll", () => {
-      let value = window.scrollY;
+    window.addEventListener("scroll", handleScroll);
 
-      if (text) text.style.marginTop = value * 2.5 + "px";
-      if (leaf) leaf.style.top = value * -1.5 + "px";
-      if (leaf) leaf.style.left = value * 1.5 + "px";
-      if (hill5) hill5.style.left = value * 1.5 + "px";
-      if (hill4) hill4.style.left = value * -1.5 + "px";
-      if (hill1) hill1.style.top = value * 1 + "px";
-      if (cat) cat.style.top = value * 3 + "px";
-    });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
     <>
       <header>
-        <nav class="navigation">
-          <a href="#" class="active">
+        <nav className="navigation">
+          <a href="#" className="active">
             Home
           </a>
           <a href="#"> About</a>
@@ -46,14 +39,36 @@ const Navbar = () => {
       </header>
 
       <section className="parallax">
-        <img src={bg} id="bg" alt="Hill 5" />
-        <img src={hill5} id="hill5" alt="Hill 5" />
+        <img src={bg} id="bg" alt="Background" />
+        <img
+          src={hill5}
+          id="hill5"
+          alt="Hill 5"
+          style={{ left: `${scrollPosition * 0.4}px` }}
+        />
         <img src={hill2} id="hill2" alt="Hill 2" />
         <img src={hill3} id="hill3" alt="Hill 3" />
-        <img src={hill4} id="hill4" alt="Hill 4" />
-        <img src={hill1} id="hill1" alt="Hill 1" />
-        <img src={tree} id="tree" alt="Tree" />{" "}
-        <h2 id="text">FuurEver-PawFect</h2>
+        <img
+          src={hill4}
+          id="hill4"
+          alt="Hill 4"
+          style={{ left: `${scrollPosition * -1.5}px` }}
+        />
+        <img
+          src={hill1}
+          id="hill1"
+          alt="Hill 1"
+          style={{ top: `${scrollPosition * 0.5}px` }}
+        />
+        <img
+          src={tree}
+          style={{ top: `${scrollPosition * 0.3}px` }}
+          id="tree"
+          alt="Tree"
+        />{" "}
+        <h2 id="text" style={{ marginTop: `${scrollPosition * 0.5}px` }}>
+          FuurEver-PawFect
+        </h2>
       </section>
 
       <section className="sec">

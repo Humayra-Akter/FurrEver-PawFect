@@ -1,3 +1,8 @@
+body {
+  background: #e3eaec;
+  min-height: 100vh;
+}
+
 .card {
   overflow: visible;
   width: 280px;
@@ -185,7 +190,7 @@
 }
 
 .title p {
-  width: 75%;
+  width: 100%;
   text-align: justify;
 }
 
