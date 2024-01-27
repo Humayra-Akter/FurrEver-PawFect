@@ -1,8 +1,33 @@
 import React from "react";
 import cat from "../../../images/cat.png";
+import dog from "../../../images/dog.jpg";
+import rabbit from "../../../images/dog-2.png";
 import "./Card.css";
 
 const Card = () => {
+  const animals = [
+    {
+      id: 1,
+      name: "Catto",
+      img: { cat },
+      description:
+        "minus at porro?ssitatibus laborum minus at porro? culpaalias ullam. Necessitatibus, ut placeat i dolorum  assumenda, sint quam Repudi culpa al minus at porro?ssitatibus laborum minu minus at porro?ssitatibus laborum minus at porro? culpas at porro? culpaias",
+    },
+    {
+      id: 2,
+      name: "Doggo",
+      img: { dog },
+      description:
+        "minus at porro?ssitatibus laborum minus at porro? culpaalias ullam. Necessitatibus, ut placeat i dolorum  assumenda, sint quam Repudi culpa al minus at porro?ssitatibus laborum minu minus at porro?ssitatibus laborum minus at porro? culpas at porro? culpaias",
+    },
+    {
+      id: 3,
+      name: "Rabbitto",
+      img: { rabbit },
+      description:
+        "minus at porro?ssitatibus laborum minus at porro? culpaalias ullam. Necessitatibus, ut placeat i dolorum  assumenda, sint quam Repudi culpa al minus at porro?ssitatibus laborum minu minus at porro?ssitatibus laborum minus at porro? culpas at porro? culpaias",
+    },
+  ];
   return (
     <>
       <div class="card">
