@@ -7,7 +7,12 @@ body {
   overflow: visible;
   width: 280px;
   height: 354px;
-  margin-left: 250px;
+}
+.card-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
 }
 
 .card-content {
