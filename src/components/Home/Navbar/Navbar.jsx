@@ -58,7 +58,7 @@ const Navbar = () => {
           src={hill1}
           id="hill1"
           alt="Hill 1"
-          style={{ top: `${scrollPosition * 0.5}px` }}
+          style={{ top: `${scrollPosition * 0.7}px` }}
         />
         <img
           src={tree}
@@ -66,7 +66,7 @@ const Navbar = () => {
           id="tree"
           alt="Tree"
         />{" "}
-        <h2 id="text" style={{ marginTop: `${scrollPosition * 0.5}px` }}>
+        <h2 id="text" style={{ marginTop: `${scrollPosition * 0.7}px` }}>
           FuurEver-PawFect
         </h2>
       </section>
