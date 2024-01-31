@@ -1,0 +1,84 @@
+{
+  "animals": [
+    {
+      "name": "Fluffy",
+      "type": "Cat",
+      "category": "Persian",
+      "age": 3,
+      "color": "White",
+      "image": "fluffy.jpg"
+    },
+    {
+      "name": "Max",
+      "type": "Dog",
+      "category": "Shepherd",
+      "age": 5,
+      "color": "Brown",
+      "image": "max.jpg"
+    },
+    {
+      "name": "Bella",
+      "type": "Cat",
+      "category": "Siamese",
+      "age": 2,
+      "color": "Cream",
+      "image": "bella.jpg"
+    },
+    {
+      "name": "Charlie",
+      "type": "Dog",
+      "category": "Labrador Retriever",
+      "age": 4,
+      "color": "Golden",
+      "image": "charlie.jpg"
+    },
+    {
+      "name": "Whiskers",
+      "type": "Cat",
+      "category": "Maine Coon",
+      "age": 1,
+      "color": "Gray",
+      "image": "whiskers.jpg"
+    },
+    {
+      "name": "Buddy",
+      "type": "Dog",
+      "category": "Beagle",
+      "age": 2,
+      "color": "Tricolor",
+      "image": "buddy.jpg"
+    },
+    {
+      "name": "Snowball",
+      "type": "Rabbit",
+      "category": "Holland Lop",
+      "age": 1,
+      "color": "White",
+      "image": "snowball.jpg"
+    },
+    {
+      "name": "Luna",
+      "type": "Cat",
+      "category": "Domestic Shorthair",
+      "age": 4,
+      "color": "Black",
+      "image": "luna.jpg"
+    },
+    {
+      "name": "Rocky",
+      "type": "Dog",
+      "category": "Boxer",
+      "age": 3,
+      "color": "Brindle",
+      "image": "rocky.jpg"
+    },
+    {
+      "name": "Cotton",
+      "type": "Rabbit",
+      "category": "Dwarf Hotot",
+      "age": 2,
+      "color": "White",
+      "image": "cotton.jpg"
+    }
+  ]
+}
