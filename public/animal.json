@@ -129,7 +129,7 @@
     {
       "name": "Luna",
       "type": "Cat",
-      "category": "Domestic Shorthair",
+      "category": "Domestic Shorthand",
       "age": 4,
       "gender": "Female",
       "size": "Medium",
@@ -165,7 +165,7 @@
     {
       "name": "Cotton",
       "type": "Rabbit",
-      "category": "Dwarf Hotot",
+      "category": "Dwarf Hoot",
       "age": 2,
       "gender": "Female",
       "size": "Small",
