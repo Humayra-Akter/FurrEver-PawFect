@@ -6,8 +6,6 @@ import hill3 from "../../../images/valley3.png";
 import hill4 from "../../../images/valley4.png";
 import hill5 from "../../../images/valley5.png";
 import tree from "../../../images/treePine2.png";
-import leaf from "../../../images/leaf.png";
-import plant from "../../../images/plant.png";
 import bg from "../../../images/bg.png";
 
 const Navbar = () => {
