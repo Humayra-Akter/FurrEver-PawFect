@@ -1,16 +1,15 @@
 import { Route, Routes } from "react-router-dom";
-import About from "./components/About/About";
-import Home from "./components/Home/Home";
-import Navigate from "./components/Shared/Navigate";
-import Service from "./components/Service/Service";
+import Home from "./Component/Home/Home";
+import About from "./Component/About/About";
+import Navbar from "./Component/Shared/Navbar";
 
 function App() {
   return (
     <>
-      <Navigate />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/service" element={<Service />} />
+
         <Route path="/about" element={<About />} />
       </Routes>
     </>
