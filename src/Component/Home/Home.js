@@ -3,6 +3,7 @@ import Banner from "./Banner";
 import KeyFeatures from "./KeyFeatures";
 import CallToAction from "./CallToAction";
 import FaqSection from "./FaqSection";
+import Contact from "./Contact";
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <KeyFeatures />
       <CallToAction />
       <FaqSection />
+      <Contact />
     </div>
   );
 };
