@@ -5,6 +5,7 @@ import CallToAction from "./CallToAction";
 import FaqSection from "./FaqSection";
 import Contact from "./Contact";
 import ScrollToTop from "./ScrollToTop";
+import About from "../About/About";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <KeyFeatures />
       <CallToAction />
       <FaqSection />
+      <About />
       <Contact />
     </div>
   );

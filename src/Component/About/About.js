@@ -6,8 +6,8 @@ import banner3 from "../../images/cat-dogg.png";
 const About = () => {
   return (
     <div className="mt-20">
-      <h1 className="text-3xl font-bold text-center text-primary my-8">
-        About - "Maker's Mosaic"
+      <h1 className="text-3xl font-bold text-center text-secondary my-8">
+        About - "FurrEver PawFect"
       </h1>
       <div className="grid lg:grid-cols-2 gap-8 p-8">
         <div
