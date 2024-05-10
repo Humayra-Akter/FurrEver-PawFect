@@ -6,6 +6,7 @@ import FaqSection from "./FaqSection";
 import Contact from "./Contact";
 import ScrollToTop from "./ScrollToTop";
 import About from "../About/About";
+import Footer from "../Shared/Footer";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <FaqSection />
       <About />
       <Contact />
+      <Footer />
     </div>
   );
 };

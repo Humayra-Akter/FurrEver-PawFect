@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import icon from "../../images/banner.png";
 
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar bg-primary">
+      <div className="navbar bg-primary h-16">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -57,7 +58,7 @@ const Navbar = () => {
             to="/"
             className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold pl-12 text-sm text-white"
           >
-            Furrever-Pawfect
+            <img src={icon} className="h-14" />
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
