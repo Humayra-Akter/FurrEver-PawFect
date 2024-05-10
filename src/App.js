@@ -3,8 +3,8 @@ import Home from "./Component/Home/Home";
 import About from "./Component/About/About";
 import Navbar from "./Component/Shared/Navbar";
 import Login from "./Component/Login/Login";
-import Registration from "./Component/Login/Registration";
 import Error from "./Component/Shared/Error";
+import Register from "./Component/Login/Register";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/registration" element={<Registration />} />
+        <Route path="/register" element={<Register />} />
         <Route path="*" element={<Error />}></Route>
       </Routes>
     </>
