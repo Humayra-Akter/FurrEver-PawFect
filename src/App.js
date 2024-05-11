@@ -8,6 +8,8 @@ import Register from "./Component/Login/Register";
 import Contact from "./Component/Contact/Contact";
 import Services from "./Component/Services/Services";
 import Dashboard from "./Component/Dashboard/Dashboard";
+import Feedback from "./Component/Feedback/Feedback";
+import Donation from "./Component/Donation/Donation";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/feedback" element={<Feedback />} />
+        <Route path="/donation" element={<Donation />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="*" element={<Error />}></Route>
       </Routes>
