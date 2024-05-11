@@ -10,7 +10,7 @@ const Banner = () => {
           <h1 className="uppercase font-mono justify-end text-center text-5xl font-black text-secondary">
             FurrEver-PawFect
           </h1>
-          <h1 className="uppercase font-mono justify-end text-center text-2xl font-black text-primary">
+          <h1 className="uppercase font-mono justify-end text-center text-2xl font-black text-green-500">
           Where Every Pet's Dream Finds a Home!
           </h1>
         </div>

@@ -15,7 +15,7 @@ const About = () => {
           }}
           className="bg-accent rounded-lg p-6 flex flex-col items-center justify-center text-center"
         >
-          <h2 className="text-xl font-bold text-white  font-mono mb-4">
+          <h2 className="text-xl font-bold text-orange-300 font-mono mb-4">
             Our Mission
           </h2>
           <p className="text-sm font-semibold text-justify font-mono text-gray-400">
@@ -25,7 +25,7 @@ const About = () => {
             resources for responsible pet ownership, and building a vibrant
             community of passionate pet enthusiasts.
           </p>
-          <h2 className="text-xl font-bold font-mono text-white my-4">
+          <h2 className="text-xl font-bold font-mono text-orange-300 my-4">
             Global & Local Impact
           </h2>
           <p className="text-sm font-mono font-semibold text-gray-400 text-justify">
@@ -44,7 +44,7 @@ const About = () => {
             }}
             className="bg-accent rounded-lg p-6 hover:scale-105 hover:bg-secondary hover:shadow-2xl"
           >
-            <h2 className="text-xl font-mono text-center font-bold text-white mb-4">
+            <h2 className="text-xl font-mono text-center font-bold text-orange-300 mb-4">
               Quality & Authenticity
             </h2>
             <p className="text-sm font-mono font-semibold text-gray-400 text-justify">
@@ -63,7 +63,7 @@ const About = () => {
             }}
             className="bg-accent rounded-lg p-6 hover:scale-105 hover:bg-secondary hover:shadow-2xl"
           >
-            <h2 className="text-xl font-mono font-bold text-white text-center mb-4">
+            <h2 className="text-xl font-mono font-bold text-orange-300 text-center mb-4">
               Our Vision
             </h2>
             <p className="text-sm font-mono font-semibold text-gray-400 text-justify">

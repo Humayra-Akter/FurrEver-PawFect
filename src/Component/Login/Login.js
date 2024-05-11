@@ -219,30 +219,29 @@ const Login = () => {
                 {signInError}
                 <p className="text-left mb-2">
                   <small className="font-semibold">
-                    <Link className="text-primary font-mono" to="/register">
+                    <Link className="font-mono" to="/register">
                       Forgot password?
                     </Link>
                   </small>
                 </p>
                 <input
-                  className="btn btn-sm text-xs w-full border-accent text-white font-bold font-mono bg-primary"
+                  className="btn btn-sm text-xs w-full border-accent text-secondary font-bold font-mono bg-primary"
                   value="LOGIN"
                   type="submit"
                 />
               </form>
               <p className="text-center">
                 <small className="font-semibold">
-                  New to FurrEver-PawFect?
-                  <br />
-                  <Link className="text-primary font-mono" to="/register">
+                  New to FurrEver-PawFect?{" "} 
+                  <Link className="font-mono text-green-700" to="/register">
                     Create new account
                   </Link>
                 </small>
               </p>
-              <div className="divider">OR</div>
+              <div className="divider text-secondary">OR</div>
               <button
                 onClick={() => signInWithGoogle()}
-                className="btn btn-sm text-xs w-full border-accent text-white font-bold font-mono bg-primary"
+                className="btn btn-sm text-xs w-full border-accent text-secondary font-bold font-mono bg-primary"
               >
                 Continue with Google
               </button>

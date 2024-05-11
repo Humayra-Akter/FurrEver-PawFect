@@ -31,7 +31,7 @@ const KeyFeatures = () => {
             <h2 className="font-black uppercase font-mono text-secondary text-center">
               Adoption Center
             </h2>
-            <p className="text-center text-black font-bold font-mono text-sm">
+            <p className="text-center  font-bold font-mono text-sm">
               Find your new furry friend among our selection of adoptable pets.
             </p>
           </div>
@@ -50,7 +50,7 @@ const KeyFeatures = () => {
             <h2 className="font-black uppercase font-mono text-secondary text-center">
               Vet Clinic Information
             </h2>
-            <p className="text-center text-black font-bold font-mono text-sm">
+            <p className="text-center  font-bold font-mono text-sm">
               Access expert veterinary care tips and information to keep your
               pet healthy and happy.
             </p>
@@ -74,7 +74,7 @@ const KeyFeatures = () => {
             <h2 className="font-black uppercase font-mono text-secondary text-center">
               Pet Care Resources
             </h2>
-            <p className="text-center text-black font-bold font-mono text-sm">
+            <p className="text-center  font-bold font-mono text-sm">
               Explore a wealth of resources and guides on pet care, grooming,
               training, and more.
             </p>
@@ -94,7 +94,7 @@ const KeyFeatures = () => {
             <h2 className="font-black uppercase font-mono text-secondary text-center">
               Community Forums
             </h2>
-            <p className="text-center text-black font-bold font-mono text-sm">
+            <p className="text-center  font-bold font-mono text-sm">
               Join our community forums to connect with fellow pet enthusiasts,
               share stories, and seek advice.
             </p>
@@ -114,7 +114,7 @@ const KeyFeatures = () => {
             <h2 className="font-black uppercase font-mono text-secondary text-center">
               Events & Activities
             </h2>
-            <p className="text-center text-black font-bold font-mono text-sm">
+            <p className="text-center font-bold font-mono text-sm">
               Stay updated on upcoming events, pet-friendly activities, and
               fundraisers in your area.
             </p>

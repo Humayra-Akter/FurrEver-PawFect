@@ -56,7 +56,7 @@ const Navbar = () => {
           </div>
           <Link
             to="/"
-            className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold pl-12 text-sm text-white"
+            className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold pl-12 text-sm text-secondary"
           >
             <img src={icon} className="h-14" />
           </Link>
@@ -66,7 +66,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/login"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-white"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary"
               >
                 Login
               </Link>
@@ -74,7 +74,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/about"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-white"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary"
               >
                 About
               </Link>
@@ -82,7 +82,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/contact"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-white"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary"
               >
                 Contact
               </Link>
@@ -90,7 +90,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/services"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-white"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary"
               >
                 Services
               </Link>
@@ -98,7 +98,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/feedback"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-white"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary"
               >
                 Feedback
               </Link>
@@ -106,7 +106,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/dashboard"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-white"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary"
               >
                 Dashboard
               </Link>
@@ -114,7 +114,7 @@ const Navbar = () => {
             <li>
               <Link
                 to="/donation"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-white"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary"
               >
                 Donation
               </Link>

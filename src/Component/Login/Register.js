@@ -84,14 +84,16 @@ const Register = () => {
             className="card bg-transparent border-primary border shadow-xl w-1/3"
           >
             <div className="card-body">
-              <h1 className="text-center text-2xl text-secondary font-mono font-extrabold">
+              <h1 className="text-center text-2xl text-secondary font-mono font-extrabold mt-4 mb-6">
                 Choose Role
               </h1>
               <div className="form-control w-full pb-4">
                 <button
                   className={`${
-                    selectedRole === "admin" ? "bg-primary" : "bg-gray-600"
-                  } w-full py-1 gap-2 text-white font-mono flex items-center justify-center rounded mb-2`}
+                    selectedRole === "admin"
+                      ? "bg-primary text-secondary"
+                      : "bg-gray-600 text-white"
+                  } w-full py-1 gap-2 font-mono flex items-center justify-center rounded mb-4`}
                   onClick={() => handleRoleSelection("admin")}
                 >
                   <img src={admin} className="w-10" />
@@ -99,8 +101,10 @@ const Register = () => {
                 </button>
                 <button
                   className={`${
-                    selectedRole === "stuff" ? "bg-primary" : "bg-gray-600"
-                  }  w-full py-1 gap-2 flex items-center text-white font-mono justify-center rounded mb-2`}
+                    selectedRole === "stuff"
+                      ? "bg-primary text-secondary"
+                      : "bg-gray-600 text-white"
+                  }  w-full py-1 gap-2 flex items-center font-mono justify-center rounded mb-4`}
                   onClick={() => handleRoleSelection("stuff")}
                 >
                   <img src={staff} className="w-10" />
@@ -108,8 +112,10 @@ const Register = () => {
                 </button>
                 <button
                   className={`${
-                    selectedRole === "vet" ? "bg-primary" : "bg-gray-600"
-                  }  w-full py-1 gap-2 text-white font-mono flex items-center justify-center rounded mb-2`}
+                    selectedRole === "vet"
+                      ? "bg-primary text-secondary"
+                      : "bg-gray-600 text-white"
+                  }  w-full py-1 gap-2 font-mono flex items-center justify-center rounded mb-4`}
                   onClick={() => handleRoleSelection("vet")}
                 >
                   <img src={vet} className="w-10" />
@@ -117,8 +123,10 @@ const Register = () => {
                 </button>
                 <button
                   className={`${
-                    selectedRole === "customer" ? "bg-primary" : "bg-gray-600"
-                  }  w-full py-1 gap-2 text-white font-mono flex items-center justify-center rounded mb-2`}
+                    selectedRole === "customer"
+                      ? "bg-primary text-secondary"
+                      : "bg-gray-600 text-white"
+                  }  w-full py-1 gap-2  font-mono flex items-center justify-center rounded mb-4`}
                   onClick={() => handleRoleSelection("customer")}
                 >
                   <img src={customer} className="w-10" />
@@ -212,22 +220,22 @@ const Register = () => {
                 </div>
                 {signInError}
                 <input
-                  className="btn btn-sm text-xs w-full border-accent text-white font-bold font-mono bg-primary"
+                  className="btn btn-sm text-xs w-full border-accent text-secondary font-bold font-mono bg-primary"
                   value="REGISTER"
                   type="submit"
                 />
                 <p className="text-center">
                   <small className="font-semibold">
                     Already have an account?{" "}
-                    <Link className="text-primary font-mono" to="/login">
+                    <Link className="text-green-700 font-mono" to="/login">
                       Login
                     </Link>
                   </small>
                 </p>
-                <div className="divider">OR</div>
+                <div className="divider text-secondary">OR</div>
                 <button
                   onClick={() => signInWithGoogle()}
-                  className="btn btn-sm text-xs w-full border-accent text-white font-bold font-mono bg-primary"
+                  className="btn btn-sm text-xs w-full border-accent text-secondary font-bold font-mono bg-primary"
                 >
                   SignIn With Google
                 </button>
