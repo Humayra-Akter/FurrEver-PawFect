@@ -27,8 +27,6 @@ const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [selectedRole, setSelectedRole] = useState("");
 
   const handleRoleSelection = (role) => {
@@ -59,6 +57,7 @@ const Register = () => {
   }
 
   const onSubmit = async (data) => {
+    data.role = selectedRole;
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
     console.log(data);
@@ -148,7 +147,35 @@ const Register = () => {
                 REGISTER
               </h1>
               <form onSubmit={handleSubmit(onSubmit)}>
-                <div className="form-control w-full pb-4">
+                {/* name  */}
+                <div className="form-control w-full pb-2">
+                  <label className="label">
+                    <span className="label-text font-mono font-bold text-md">
+                      Name
+                    </span>
+                  </label>
+                  <input
+                    type="name"
+                    placeholder="Your name"
+                    name="name"
+                    className="input input-sm input-bordered w-full"
+                    {...register("name", {
+                      required: {
+                        value: true,
+                        message: "name is required",
+                      },
+                    })}
+                  />
+                  <label>
+                    {errors.name?.type === "required" && (
+                      <span className="text-red-500 text-xs mt-1">
+                        {errors.name.message}
+                      </span>
+                    )}
+                  </label>
+                </div>
+                {/* email  */}
+                <div className="form-control w-full pb-2">
                   <label className="label">
                     <span className="label-text font-mono font-bold text-md">
                       Email
@@ -183,6 +210,7 @@ const Register = () => {
                     )}
                   </label>
                 </div>
+                {/* pass  */}
                 <div className="form-control w-full pb-6">
                   <label className="label">
                     <span className="label-text font-mono font-bold text-md">
