@@ -2,10 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import icon from "../../images/banner.png";
 
-const Navbar = () => {
+const Navbar = ({ darkMode, toggleDarkMode }) => {
   return (
     <div>
-      <div className="navbar bg-primary h-16">
+      <div
+        className={`navbar ${darkMode ? "bg-primary" : "bg-secondary"} h-16`}
+      >
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -27,16 +29,53 @@ const Navbar = () => {
             {/* small screen  */}
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className={`menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow ${
+                darkMode ? "bg-base-100" : "bg-neutral"
+              } rounded-box w-52`}
             >
               <li>
-                <Link to="/about">About</Link>
-                <Link to="/services">Services</Link>
-                <Link to="/feedback">Feedback</Link>
-                <Link to="/dashboard">Dashboard</Link>
-                <Link to="/donation">Donation</Link>
-                <Link to="/contact">Contact</Link>
-                <Link to="/login">Login</Link>
+                <Link
+                  to="/about"
+                  className={`text-${darkMode ? "base-100" : "base-800"}`}
+                >
+                  About
+                </Link>
+                <Link
+                  to="/services"
+                  className={`text-${darkMode ? "base-100" : "base-800"}`}
+                >
+                  Services
+                </Link>
+                <Link
+                  to="/feedback"
+                  className={`text-${darkMode ? "base-100" : "base-800"}`}
+                >
+                  Feedback
+                </Link>
+                <Link
+                  to="/dashboard"
+                  className={`text-${darkMode ? "base-100" : "base-800"}`}
+                >
+                  Dashboard
+                </Link>
+                <Link
+                  to="/donation"
+                  className={`text-${darkMode ? "base-100" : "base-800"}`}
+                >
+                  Donation
+                </Link>
+                <Link
+                  to="/contact"
+                  className={`text-${darkMode ? "base-100" : "base-800"}`}
+                >
+                  Contact
+                </Link>
+                <Link
+                  to="/login"
+                  className={`text-${darkMode ? "base-100" : "base-800"}`}
+                >
+                  Login
+                </Link>
               </li>
               {/* <li>
                 <Link>Dashboard</Link>
@@ -50,7 +89,12 @@ const Navbar = () => {
                 </ul>
               </li> */}
               <li>
-                <Link>Contact</Link>
+                <Link
+                  to="/contact"
+                  className={`text-${darkMode ? "base-100" : "base-800"}`}
+                >
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>
@@ -64,9 +108,16 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
+              <button onClick={toggleDarkMode} className="btn btn-ghost">
+                {darkMode ? "Light Mode" : "Dark Mode"}
+              </button>
+            </li>
+            <li>
               <Link
                 to="/login"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary"
+                className={`transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm ${
+                  darkMode ? "text-base-100" : "text-base-800"
+                }`}
               >
                 Login
               </Link>
@@ -74,7 +125,9 @@ const Navbar = () => {
             <li>
               <Link
                 to="/about"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary"
+                className={`transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm ${
+                  darkMode ? "text-base-100" : "text-base-800"
+                }`}
               >
                 About
               </Link>
@@ -82,7 +135,9 @@ const Navbar = () => {
             <li>
               <Link
                 to="/contact"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary"
+                className={`transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm ${
+                  darkMode ? "text-base-100" : "text-base-800"
+                }`}
               >
                 Contact
               </Link>
@@ -90,7 +145,9 @@ const Navbar = () => {
             <li>
               <Link
                 to="/services"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary"
+                className={`transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm ${
+                  darkMode ? "text-base-100" : "text-base-800"
+                }`}
               >
                 Services
               </Link>
@@ -98,7 +155,9 @@ const Navbar = () => {
             <li>
               <Link
                 to="/feedback"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary"
+                className={`transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm ${
+                  darkMode ? "text-base-100" : "text-base-800"
+                }`}
               >
                 Feedback
               </Link>
@@ -106,7 +165,9 @@ const Navbar = () => {
             <li>
               <Link
                 to="/dashboard"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary"
+                className={`transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm ${
+                  darkMode ? "text-base-100" : "text-base-800"
+                }`}
               >
                 Dashboard
               </Link>
@@ -114,7 +175,9 @@ const Navbar = () => {
             <li>
               <Link
                 to="/donation"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary"
+                className={`transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm ${
+                  darkMode ? "text-base-100" : "text-base-800"
+                }`}
               >
                 Donation
               </Link>
