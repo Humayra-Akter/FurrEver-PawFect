@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Component/Home/Home";
 import About from "./Component/About/About";
@@ -10,21 +11,34 @@ import Services from "./Component/Services/Services";
 import Dashboard from "./Component/Dashboard/Dashboard";
 import Feedback from "./Component/Feedback/Feedback";
 import Donation from "./Component/Donation/Donation";
-import { useState } from "react";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false); // Initialize dark mode state to false
- 
-  const toggleDarkMode = () => {
-    setDarkMode((prevDarkMode) => !prevDarkMode);
+  const [theme, setTheme] = useState("dark");
+
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
+  const themes = {
+    dark: {
+      primary: "#800000",
+      secondary: "#FFD700",
+      accent: "#0E241A",
+      neutral: "#F5F5F5",
+      "base-100": "#000",
+    },
+    light: {
+      primary: "dark-green",
+      secondary: "blue",
+      accent: "green",
+      neutral: "#F5F5F5",
+      "base-100": "#fff",
+    },
   };
 
   return (
     <>
-      <Navbar
-        darkMode={darkMode}
-        toggleDarkMode={toggleDarkMode}
-      />
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
