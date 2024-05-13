@@ -4,6 +4,7 @@ import img5 from "../../images/call.png";
 import img6 from "../../images/address.png";
 import img7 from "../../images/facebook-app-symbol.png";
 import GoogleMapReact from "google-map-react";
+import SimpleMap from "./SimpleMap";
 
 const Contact = () => {
   return (
@@ -113,9 +114,9 @@ const Contact = () => {
         {/* Map */}
         <div className="mb-8">
           <h2 className="text-xl font-semibold mb-4">Map</h2>
-          {/* Embed map component goes here */}
+          <SimpleMap />
         </div>
-        
+
         {/* Hours of Operation */}
         <div className="mb-8">
           <h2 className="text-xl font-semibold mb-4">Hours of Operation</h2>
