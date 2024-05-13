@@ -3,6 +3,7 @@ import bg from "../../images/card-bg.jpg";
 import img5 from "../../images/call.png";
 import img6 from "../../images/address.png";
 import img7 from "../../images/facebook-app-symbol.png";
+import GoogleMapReact from "google-map-react";
 
 const Contact = () => {
   return (
