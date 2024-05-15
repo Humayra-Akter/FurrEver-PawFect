@@ -9,10 +9,7 @@ import SimpleMap from "./SimpleMap";
 const Contact = () => {
   return (
     <div className="bg-black p-8">
-      <div className="max-w-4xl mx-auto">
-        {/* <h1 className="text-3xl text-secondary font-mono font-bold text-center mb-8">
-          Contact Us
-        </h1> */}
+      <div className="lg:max-w-5xl mx-auto">
         <div className=" py-12">
           <div
             style={{
@@ -21,12 +18,12 @@ const Contact = () => {
             }}
             className="mx-auto border-4 border-accent shadow-lg rounded-lg p-6"
           >
-            <div className="flex justify-between mx-40">
+            <div className="mx-20">
               <div>
                 <h2 className="text-3xl font-semibold text-secondary mb-6 font-mono">
                   Contact Form
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                   <div>
                     <h3 className="text-xl font-mono text-orange-200 font-semibold mb-3">
                       Our Address
@@ -49,7 +46,7 @@ const Contact = () => {
                       </label>
                       <input
                         type="text"
-                        className="mt-1 focus:ring-primary focus:border-primary block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+                        className="mt-1 focus:ring-primary focus:border-primary block w-full shadow-sm sm:text-sm border-accent rounded-md"
                       />
                     </div>
                     <div>
@@ -91,11 +88,11 @@ const Contact = () => {
           }}
         >
           {/* Social Media */}
-          <div className="mb-8">
-            <h2 className="text-xl font-semibold text-secondary mb-6 font-mono">
+          <div className="mx-auto border-4 border-accent shadow-lg rounded-lg p-6">
+            <h2 className="text-xl font-semibold text-secondary mb-6 font-mono mx-20">
               Social Media
             </h2>
-            <div className="grid grid-cols-3">
+            <div className="grid grid-cols-3 mx-20">
               <p className="flex mb-4">
                 <img src={img5} className="w-6 h-6 bg-white p-1 rounded-2xl" />
                 <h1 className="pl-5">+088 16292-72142</h1>
@@ -112,9 +109,13 @@ const Contact = () => {
           </div>
         </div>
         {/* Map */}
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold mb-4">Map</h2>
-          <SimpleMap />
+        <div className="mx-auto border-4 border-accent shadow-lg rounded-lg p-6 mt-10">
+          <h2 className="text-xl font-semibold font-mono text-secondary mb-4 mx-20">
+            Map
+          </h2>
+          <div className="mx-20">
+            <SimpleMap />
+          </div>
         </div>
 
         {/* Hours of Operation */}
