@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import Loading from "../Shared/Loading";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import bcrypt from "bcryptjs";
+import { toast } from "react-toastify";
+import {
+  useCreateUserWithEmailAndPassword,
+  useSignInWithGoogle,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import Loading from "../Shared/Loading";
 import bg from "../../images/output-onlinepngtools.png";
 import bgg from "../../images/faq-bg.jpg";
 import admin from "../../images/admin.png";
 import customer from "../../images/customer.png";
 import staff from "../../images/staff.png";
 import vet from "../../images/veterinarian.png";
-import auth from "../../firebase.init";
-import {
-  useCreateUserWithEmailAndPassword,
-  useSignInWithGoogle,
-  useUpdateProfile,
-} from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 
 const Register = () => {
   const {
@@ -23,27 +23,20 @@ const Register = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  let signInError;
+  const [selectedRole, setSelectedRole] = useState("");
+  const [roleError, setRoleError] = useState(null);
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-  const [selectedRole, setSelectedRole] = useState("");
-  const [roleError, setRoleError] = useState(null); // Add state for role error
-
-  const handleRoleSelection = (role) => {
-    setSelectedRole(role);
-    setRoleError(null); // Clear the role error when a role is selected
-  };
-
   const navigate = useNavigate();
   const location = useLocation();
 
-  let from = location.state?.from?.pathname || "/";
-  let errorElement;
+  const from = location.state?.from?.pathname || "/";
+  let signInError;
 
   if (loading || gLoading) {
-    return <Loading></Loading>;
+    return <Loading />;
   }
 
   if (error || gError || updateError) {
@@ -60,21 +53,27 @@ const Register = () => {
     navigate(from, { replace: true });
   }
 
+  const handleRoleSelection = (role) => {
+    setSelectedRole(role);
+    setRoleError(null);
+  };
+
   const onSubmit = async (data) => {
     if (!selectedRole) {
       setRoleError("Please select a role.");
       return;
     }
-    setRoleError(null); // Clear the error if a role is selected
+    setRoleError(null);
 
+    const hashedPassword = await bcrypt.hash(data.password, 10);
     data.role = selectedRole;
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
 
-    // user data to the server
     const userData = {
       name: data.name,
       email: data.email,
+      password: hashedPassword,
       role: data.role,
     };
 
@@ -87,17 +86,17 @@ const Register = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.message === "user added successfully") {
+        if (data.success) {
           toast.success("Welcome to Furrever-Pawfect");
         } else {
-          toast.error("Failed to add user to the database");
+          toast.error("Failed to register");
         }
       })
       .catch((error) => {
         console.error("Error:", error);
       });
 
-    console.log(data);
+    console.log(userData.password);
   };
 
   return (

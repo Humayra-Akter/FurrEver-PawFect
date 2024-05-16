@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   useSignInWithEmailAndPassword,
@@ -20,32 +20,56 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-  const [loggedUser, setLoggedUser] = useState([]);
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [loggedUser, setLoggedUser] = useState([]);
   const [selectedRole, setSelectedRole] = useState("");
   const [passwordVisible, setPasswordVisible] = useState(false);
   let signInError;
 
-  //   useEffect(() => {
-  //     fetch("http://localhost:5000/user")
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setLoggedUser(data);
-  //       });
-  //   }, []);
-
   const navigate = useNavigate();
   const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+
+  useEffect(() => {
+    fetch("http://localhost:5000/user")
+      .then((res) => res.json())
+      .then((data) => setLoggedUser(data));
+  }, []);
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
 
-  let from = location.state?.from?.pathname || "/";
+  const onSubmit = async (data) => {
+    try {
+      const response = await fetch("http://localhost:5000/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: data.email,
+          password: data.password,
+          role: data.role,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.status === 200) {
+        toast.success(result.message);
+        navigate(from, { replace: true });
+      } else {
+        toast.error(result.message);
+      }
+    } catch (error) {
+      toast.error("Something went wrong. Please try again.");
+    }
+  };
 
   if (loading || gLoading) {
-    return <Loading></Loading>;
+    return <Loading />;
   }
 
   if (error || gError) {
@@ -56,37 +80,20 @@ const Login = () => {
     );
   }
 
-  if (user || gUser) {
-    navigate(from, { replace: true });
-  }
-  const onSubmit = (data) => {
-    signInWithEmailAndPassword(data.email, data.password);
-    console.log(data);
-  };
-
   return (
     <div
-      style={{
-        background: `url(${bg})`,
-        backgroundSize: "cover",
-      }}
-      className=" pb-20 pt-16"
+      style={{ background: `url(${bg})`, backgroundSize: "cover" }}
+      className="pb-20 pt-16"
     >
       <div className="absolute top-16 inset-0 bg-gradient-to-r from-black to-transparent"></div>
       <div
-        style={{
-          background: `url(${bgg})`,
-          backgroundSize: "cover",
-        }}
+        style={{ background: `url(${bgg})`, backgroundSize: "cover" }}
         className="mx-auto max-w-md"
       >
         <div className="card bg-transparent border-primary border-2 shadow-xl">
           <div>
             <div className="card-body">
-              <h1
-                style={{ fontFamily: "arial" }}
-                className="text-center text-2xl text-secondary font-mono font-extrabold"
-              >
+              <h1 className="text-center text-2xl text-secondary font-mono font-extrabold">
                 LOGIN
               </h1>
 
@@ -102,7 +109,7 @@ const Login = () => {
                     type="email"
                     placeholder="Your email"
                     name="email"
-                    className="input input-sm input-bordered w-full "
+                    className="input input-sm input-bordered w-full"
                     {...register("email", {
                       required: {
                         value: true,
@@ -192,13 +199,13 @@ const Login = () => {
                         <img
                           className="fa fa-eye w-4 text-gray-500"
                           src={eye}
-                          alt=""
+                          alt="Show"
                         />
                       ) : (
                         <img
                           className="fa fa-eye w-4 text-gray-500"
                           src={eyeClose}
-                          alt=""
+                          alt="Hide"
                         />
                       )}
                     </button>
@@ -232,7 +239,7 @@ const Login = () => {
               </form>
               <p className="text-center">
                 <small className="font-semibold">
-                  New to FurrEver-PawFect?{" "} 
+                  New to FurrEver-PawFect?{" "}
                   <Link className="font-mono text-green-700" to="/register">
                     Create new account
                   </Link>
