@@ -15,6 +15,7 @@ import {
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const {
@@ -28,10 +29,13 @@ const Register = () => {
     useCreateUserWithEmailAndPassword(auth);
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const [selectedRole, setSelectedRole] = useState("");
+  const [roleError, setRoleError] = useState(null); // Add state for role error
 
   const handleRoleSelection = (role) => {
     setSelectedRole(role);
+    setRoleError(null); // Clear the role error when a role is selected
   };
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -57,6 +61,12 @@ const Register = () => {
   }
 
   const onSubmit = async (data) => {
+    if (!selectedRole) {
+      setRoleError("Please select a role.");
+      return;
+    }
+    setRoleError(null); // Clear the error if a role is selected
+
     data.role = selectedRole;
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
@@ -78,9 +88,9 @@ const Register = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.message === "user added successfully") {
-          console.log("User added to the database");
+          toast.success("Welcome to Furrever-Pawfect");
         } else {
-          console.error("Failed to add user to the database");
+          toast.error("Failed to add user to the database");
         }
       })
       .catch((error) => {
@@ -158,6 +168,11 @@ const Register = () => {
                   <img src={customer} className="w-10" />
                   Customer
                 </button>
+                {roleError && (
+                  <p className="text-red-600 mt-2">
+                    <small>{roleError}</small>
+                  </p>
+                )}
               </div>
             </div>
           </div>
