@@ -60,6 +60,33 @@ const Register = () => {
     data.role = selectedRole;
     await createUserWithEmailAndPassword(data.email, data.password);
     await updateProfile({ displayName: data.name });
+
+    // user data to the server
+    const userData = {
+      name: data.name,
+      email: data.email,
+      role: data.role,
+    };
+
+    fetch("http://localhost:5000/user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.message === "user added successfully") {
+          console.log("User added to the database");
+        } else {
+          console.error("Failed to add user to the database");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+
     console.log(data);
   };
 

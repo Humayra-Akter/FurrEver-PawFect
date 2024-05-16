@@ -1,10 +1,19 @@
 import React from "react";
 import contactImage from "../../images/banner.png";
+import bg from "../../images/card-bg.jpg";
 
 const Contact = () => {
   return (
     <div className=" py-12">
-      <div className="h-96 mx-auto bg-accent shadow-lg rounded-lg p-6">
+      <div
+        style={{
+          background: `url(${bg})`,
+          backgroundSize: "cover",
+          borderWidth: 1,
+          borderColor: "darkslategray",
+        }}
+        className="h-96 mx-auto bg-accent shadow-lg rounded-lg p-6"
+      >
         <div className="flex justify-between mx-60">
           <div>
             <img
