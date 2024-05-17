@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 
-const DashboardStaff = () => {
+const DashboardCustomer = () => {
   return (
     <div className="flex">
       <div className="drawer lg:drawer-open">
@@ -23,7 +23,7 @@ const DashboardStaff = () => {
           <ul className="menu p-4 h-full bg-primary text-base-content">
             <li>
               <Link
-                to="/dashboardStaff"
+                to="/dashboardCustomer"
                 className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full pt-20 uppercase h-full font-bold font-mono text-center text-sm text-secondary font mono "
               >
                 👉 profile
@@ -31,26 +31,34 @@ const DashboardStaff = () => {
             </li>
             <li>
               <Link
-                to="/dashboardStaff/staffFindCabin"
+                to="/dashboardCustomer/customerCabin"
                 className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary font mono "
               >
-                👉 staff find cabin
-              </Link>
-            </li>{" "}
-            <li>
-              <Link
-                to="/dashboardStaff/staffDaycareAnimal"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary font mono "
-              >
-                👉 staff daycare animal
+                👉 customer cabin
               </Link>
             </li>
             <li>
               <Link
-                to="/dashboardStaff/staffRescuedAnimal"
+                to="/dashboardCustomer/customerDonation"
                 className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary font mono "
               >
-                👉 staff rescued animal
+                👉 customer donation
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/dashboardCustomer/customerFeedback"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary font mono "
+              >
+                👉 customer feedback
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/dashboardCustomer/customerPrice"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary font mono "
+              >
+                👉 customer price
               </Link>
             </li>
           </ul>
@@ -60,4 +68,4 @@ const DashboardStaff = () => {
   );
 };
 
-export default DashboardStaff;
+export default DashboardCustomer;

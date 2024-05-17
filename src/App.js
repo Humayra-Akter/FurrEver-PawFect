@@ -13,7 +13,7 @@ import Feedback from "./Component/Feedback/Feedback";
 import Donation from "./Component/Donation/Donation";
 import { ToastContainer } from "react-toastify";
 import DashboardStaff from "./Component/Dashboard/DashboardStaff/DashboardStaff";
-
+import DashboardCustomer from "./Component/Dashboard/DashboardCustomer/DashboardCustomer";
 
 function App() {
   return (
@@ -29,6 +29,7 @@ function App() {
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/donation" element={<Donation />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/customerDashboard" element={<DashboardCustomer />} />
         <Route path="/staffDashboard" element={<DashboardStaff />}>
           {/* <Route index element={<StaffInfo />}></Route>
           <Route path="staffFindCabin" element={<StaffFindCabin />}></Route>
