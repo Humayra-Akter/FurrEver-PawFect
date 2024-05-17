@@ -142,7 +142,7 @@ const Login = () => {
                     onChange={(e) => setSelectedRole(e.target.value)}
                   >
                     <option value="admin">Admin</option>
-                    <option value="stuff">Stuff</option>
+                    <option value="staff">staff</option>
                     <option value="vet">Vet</option>
                     <option value="customer">Customer</option>
                   </select>

@@ -5,6 +5,7 @@ import img6 from "../../images/address.png";
 import img7 from "../../images/facebook-app-symbol.png";
 import GoogleMapReact from "google-map-react";
 import SimpleMap from "./SimpleMap";
+import Footer from "../Shared/Footer";
 
 const Contact = () => {
   return (
@@ -135,13 +136,8 @@ const Contact = () => {
             <li>[FAQ 3]</li>
           </ul>
         </div>
-        {/* Call to Action */}
-        <div className="text-center">
-          <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
-            Call to Action
-          </button>
-        </div>
       </div>
+      <Footer />
     </div>
   );
 };

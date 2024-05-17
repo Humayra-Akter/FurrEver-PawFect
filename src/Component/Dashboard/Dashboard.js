@@ -19,11 +19,11 @@ const Dashboard = () => {
       </div>
       <div className="drawer-side">
         <label for="my-drawer-2" className="drawer-overlay"></label>
-        <ul className="menu p-4 w-60 h-full bg-primary text-base-content">
+        <ul className="menu p-4 w-52 h-full bg-primary text-base-content">
           <li>
             <Link
               to="/dashboard"
-              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full pt-20 uppercase h-full font-bold text-center text-sm text-secondary font mono "
+              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full pt-20 uppercase h-full font-bold font-mono text-center text-sm text-secondary font mono "
             >
               👉 Admin
             </Link>
@@ -31,7 +31,7 @@ const Dashboard = () => {
           <li>
             <Link
               to="/dashboard/customers"
-              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary font mono "
+              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary font mono "
             >
               👉 customers
             </Link>
@@ -40,7 +40,7 @@ const Dashboard = () => {
           <li>
             <Link
               to="/dashboard/staff"
-              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary font mono "
+              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary font mono "
             >
               👉 staff
             </Link>
@@ -48,7 +48,7 @@ const Dashboard = () => {
           <li>
             <Link
               to="/dashboard/vet"
-              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary font mono "
+              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase font-mono h-full font-bold text-center text-sm text-secondary font mono "
             >
               👉 veterinarian
             </Link>
@@ -66,7 +66,7 @@ const Dashboard = () => {
           <li>
             <Link
               to="/dashboard/donation"
-              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary font mono "
+              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary font mono "
             >
               👉 donation
             </Link>
@@ -74,7 +74,7 @@ const Dashboard = () => {
           <li>
             <Link
               to="/dashboard/feedback"
-              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary font mono "
+              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary font mono "
             >
               👉 feedback
             </Link>
@@ -82,7 +82,7 @@ const Dashboard = () => {
           <li>
             <Link
               to="/dashboard/rescuer"
-              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary font mono "
+              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary font mono "
             >
               👉 rescuer
             </Link>
@@ -90,14 +90,14 @@ const Dashboard = () => {
           <li>
             <Link
               to="/dashboard/cabin"
-              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary font mono "
+              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary font mono "
             >
               👉 cabin
             </Link>
           </li>
           <li>
             <Link
-              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary font mono "
+              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary font mono "
               to="/dashboard/daycareAnimal"
             >
               👉 daycare Animal
@@ -105,7 +105,7 @@ const Dashboard = () => {
           </li>
           <li>
             <Link
-              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary font mono "
+              className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary font mono "
               to="/dashboard/rescuedAnimal"
             >
               👉 rescued Animal

@@ -136,14 +136,14 @@ const Register = () => {
                 </button>
                 <button
                   className={`${
-                    selectedRole === "stuff"
+                    selectedRole === "staff"
                       ? "bg-primary text-secondary"
                       : "bg-gray-600 text-white"
                   }  w-full py-1 gap-2 flex items-center font-mono justify-center rounded mb-4`}
-                  onClick={() => handleRoleSelection("stuff")}
+                  onClick={() => handleRoleSelection("staff")}
                 >
                   <img src={staff} className="w-10" />
-                  Stuff
+                  staff
                 </button>
                 <button
                   className={`${
