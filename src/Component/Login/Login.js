@@ -34,38 +34,26 @@ const Login = () => {
   useEffect(() => {
     fetch("http://localhost:5000/user")
       .then((res) => res.json())
-      .then((data) => setLoggedUser(data));
+      .then((data) => {
+        setLoggedUser(data);
+      });
   }, []);
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
 
-  const onSubmit = async (data) => {
-    try {
-      const response = await fetch("http://localhost:5000/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: data.email,
-          password: data.password,
-          role: data.role,
-        }),
-      });
-
-      const result = await response.json();
-
-      if (response.status === 200) {
-        toast.success(result.message);
-        navigate(from, { replace: true });
-      } else {
-        toast.error(result.message);
-      }
-    } catch (error) {
-      toast.error("Something went wrong. Please try again.");
+  const onSubmit = (data) => {
+    if (loggedUser) {
+      signInWithEmailAndPassword(data.email, data.password);
+      localStorage.setItem("userRole", data.role);
+    } else {
+      toast.error(
+        `${data.email} or ${data.role} is invalid. Please check it again`
+      );
     }
+    const userRole = localStorage.getItem("userRole");
+    navigate(`/${userRole}Dashboard`);
   };
 
   if (loading || gLoading) {

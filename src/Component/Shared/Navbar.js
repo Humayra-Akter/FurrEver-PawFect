@@ -1,8 +1,20 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import icon from "../../images/banner.png";
+import auth from "../../firebase.init";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { signOut } from "firebase/auth";
 
 const Navbar = () => {
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
+
+  const logout = () => {
+    // localStorage.removeItem("userRole");
+    signOut(auth);
+    navigate("/");
+  };
+
   return (
     <div>
       <div className="navbar bg-primary h-16">
@@ -36,19 +48,22 @@ const Navbar = () => {
                 <Link to="/dashboard">Dashboard</Link>
                 <Link to="/donation">Donation</Link>
                 <Link to="/contact">Contact</Link>
-                <Link to="/login">Login</Link>
+                {user ? (
+                  <button
+                    onClick={logout}
+                    className="text-white font-bold hover:text-black pr-7 "
+                  >
+                    <div class="indicator">Logout</div>
+                  </button>
+                ) : (
+                  <Link to="/login">
+                    <button className="text-white font-bold hover:text-black pr-7 ">
+                      <div class="indicator">Login</div>
+                    </button>
+                  </Link>
+                )}
               </li>
-              {/* <li>
-                <Link>Dashboard</Link>
-                <ul className="p-2">
-                  <li>
-                    <Link>Submenu 1</Link>
-                  </li>
-                  <li>
-                    <Link>Submenu 2</Link>
-                  </li>
-                </ul>
-              </li> */}
+
               <li>
                 <Link>Contact</Link>
               </li>
@@ -58,19 +73,16 @@ const Navbar = () => {
             to="/"
             className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold pl-12 text-sm text-secondary"
           >
-            <img src={icon} className="h-14" />
+            <div className="flex gap-4">
+              <img src={icon} className="h-14" />
+              <p className="uppercase mt-4 font-bold text-left text-sm text-secondary">
+                {user?.displayName}
+              </p>
+            </div>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li>
-              <Link
-                to="/login"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary"
-              >
-                Login
-              </Link>
-            </li>
             <li>
               <Link
                 to="/about"
@@ -118,6 +130,22 @@ const Navbar = () => {
               >
                 Donation
               </Link>
+            </li>
+            <li>
+              {user ? (
+                <button
+                  onClick={logout}
+                  className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary"
+                >
+                  <div class="indicator">Logout</div>
+                </button>
+              ) : (
+                <Link to="/login">
+                  <button className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold text-center text-sm text-secondary">
+                    <div class="indicator">Login</div>
+                  </button>
+                </Link>
+              )}
             </li>
             {/* <li>
               <details>
