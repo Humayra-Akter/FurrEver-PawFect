@@ -1,18 +1,62 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
 
 const CustomerProfile = () => {
-  const [customerInfo, setCustomerInfo] = useState({
-    name: "John Doe",
-    email: "johndoe@example.com",
-    password: "********",
-    role: "customer",
-  });
+  const [user] = useAuthState(auth);
+  const [loggedUser, setLoggedUser] = useState({});
+  const [updatedCustomer, setUpdatedCustomer] = useState({});
+  const [customerInfo, setCustomerInfo] = useState({});
+  const [editable, setEditable] = useState(false);
+
+  useEffect(() => {
+    if (user) {
+      fetch(`http://localhost:5000/user?email=${user?.email}`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.length > 0) {
+            console.log(data);
+            const matchingUser = data.find(
+              (userData) => userData?.email === user?.email
+            );
+            if (matchingUser) {
+              setLoggedUser(matchingUser);
+              setUpdatedCustomer({ ...matchingUser });
+            }
+          }
+        });
+    }
+  }, [user]);
+
+  const handleCancelEdit = () => {
+    setEditable(false);
+    setUpdatedCustomer({ ...loggedUser });
+  };
 
   const handleUpdateInfo = (field, value) => {
     setCustomerInfo((prevInfo) => ({
       ...prevInfo,
       [field]: value,
     }));
+  };
+
+  const handleEdit = () => {
+    setEditable(true);
+  };
+
+  const handleSave = () => {
+    fetch(`http://localhost:5000/user/${loggedUser._id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedCustomer),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setEditable(false);
+      });
   };
 
   return (
@@ -29,7 +73,10 @@ const CustomerProfile = () => {
             type="text"
             value={customerInfo.name}
             onChange={(e) => handleUpdateInfo("name", e.target.value)}
-            className="w-full px-3 py-2 border rounded shadow appearance-none"
+            className={`w-full px-3 py-2 border rounded shadow appearance-none ${
+              editable ? "" : "bg-gray-100"
+            }`}
+            readOnly={!editable}
           />
         </div>
         <div className="mb-4">
@@ -40,7 +87,10 @@ const CustomerProfile = () => {
             type="email"
             value={customerInfo.email}
             onChange={(e) => handleUpdateInfo("email", e.target.value)}
-            className="w-full px-3 py-2 border rounded shadow appearance-none"
+            className={`w-full px-3 py-2 border rounded shadow appearance-none ${
+              editable ? "" : "bg-gray-100"
+            }`}
+            readOnly={!editable}
           />
         </div>
         <div className="mb-4">
@@ -51,7 +101,10 @@ const CustomerProfile = () => {
             type="password"
             value={customerInfo.password}
             onChange={(e) => handleUpdateInfo("password", e.target.value)}
-            className="w-full px-3 py-2 border rounded shadow appearance-none"
+            className={`w-full px-3 py-2 border rounded shadow appearance-none ${
+              editable ? "" : "bg-gray-100"
+            }`}
+            readOnly={!editable}
           />
         </div>
 
@@ -66,7 +119,24 @@ const CustomerProfile = () => {
             className="w-full px-3 py-2 border rounded shadow appearance-none bg-gray-100"
           />
         </div>
-        {/* Add more fields and functionalities as needed */}
+        {/* Show edit button if not already editing */}
+        {!editable && (
+          <button
+            onClick={handleEdit}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Edit
+          </button>
+        )}
+        {/* Show save button if editing */}
+        {editable && (
+          <button
+            onClick={handleSave}
+            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Save
+          </button>
+        )}
       </div>
     </div>
   );

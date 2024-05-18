@@ -88,6 +88,7 @@ const Register = () => {
       .then((data) => {
         if (data.success) {
           toast.success("Welcome to Furrever-Pawfect");
+          localStorage.setItem("userRole", data.role);
         } else {
           toast.error("Failed to register");
         }
@@ -96,7 +97,6 @@ const Register = () => {
         console.error("Error:", error);
       });
 
-    console.log(userData.password);
   };
 
   return (

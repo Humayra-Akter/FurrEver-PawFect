@@ -23,7 +23,7 @@ const customerDashboard = () => {
           <ul className="menu p-4 h-full bg-primary text-base-content">
             <li>
               <Link
-                to="/customerDash"
+                to="/customerDashboard"
                 className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full pt-20 uppercase h-full font-bold font-mono text-center text-sm text-secondary"
               >
                 👉 Profile
