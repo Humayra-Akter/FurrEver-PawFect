@@ -8,6 +8,7 @@ import { signOut } from "firebase/auth";
 const Navbar = () => {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
+  const userRole = localStorage.getItem("userRole");
 
   const logout = () => {
     localStorage.removeItem("userRole");
@@ -75,9 +76,14 @@ const Navbar = () => {
           >
             <div className="flex gap-4">
               <img src={icon} className="h-14" />
-              <p className="uppercase mt-4 font-bold text-left text-sm text-secondary">
-                {user?.displayName}
-              </p>
+              <div>
+                <p className="uppercase mt-4 font-bold text-left font-mono text-sm text-secondary">
+                  {user?.displayName}
+                </p>
+                <p className="font-mono text-left text-xs text-secondary">
+                  {userRole}
+                </p>
+              </div>
             </div>
           </Link>
         </div>

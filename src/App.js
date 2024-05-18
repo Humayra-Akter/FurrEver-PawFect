@@ -14,6 +14,7 @@ import Donation from "./Component/Donation/Donation";
 import { ToastContainer } from "react-toastify";
 import DashboardStaff from "./Component/Dashboard/DashboardStaff/DashboardStaff";
 import DashboardCustomer from "./Component/Dashboard/DashboardCustomer/DashboardCustomer";
+import CustomerProfile from "./Component/Dashboard/DashboardCustomer/CustomerProfile";
 
 function App() {
   return (
@@ -29,7 +30,12 @@ function App() {
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/donation" element={<Donation />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/customerDashboard" element={<DashboardCustomer />} />
+        
+        <Route path="/customerDashboard" element={<DashboardCustomer />}>
+          <Route index element={<CustomerProfile />}></Route>
+          {/* <Route path="customerProfile" element={<CustomerProfile />}></Route> */}
+        </Route>
+
         <Route path="/staffDashboard" element={<DashboardStaff />}>
           {/* <Route index element={<StaffInfo />}></Route>
           <Route path="staffFindCabin" element={<StaffFindCabin />}></Route>
