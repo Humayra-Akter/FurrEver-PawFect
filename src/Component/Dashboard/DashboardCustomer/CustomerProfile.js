@@ -6,7 +6,6 @@ const CustomerProfile = () => {
   const [user] = useAuthState(auth);
   const [loggedUser, setLoggedUser] = useState({});
   const [updatedCustomer, setUpdatedCustomer] = useState({});
-  const [customerInfo, setCustomerInfo] = useState({});
   const [editable, setEditable] = useState(false);
 
   useEffect(() => {
@@ -15,7 +14,6 @@ const CustomerProfile = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.length > 0) {
-            console.log(data);
             const matchingUser = data.find(
               (userData) => userData?.email === user?.email
             );
@@ -34,7 +32,7 @@ const CustomerProfile = () => {
   };
 
   const handleUpdateInfo = (field, value) => {
-    setCustomerInfo((prevInfo) => ({
+    setUpdatedCustomer((prevInfo) => ({
       ...prevInfo,
       [field]: value,
     }));
@@ -45,7 +43,7 @@ const CustomerProfile = () => {
   };
 
   const handleSave = () => {
-    fetch(`http://localhost:5000/user/${loggedUser._id}`, {
+    fetch(`http://localhost:5000/user/${loggedUser?.email}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -60,10 +58,10 @@ const CustomerProfile = () => {
   };
 
   return (
-    <div className="mt-20 min-h-screen p-4">
+    <div className="mt-10 min-h-screen p-4">
       <div className="max-w-md mx-auto bg-white rounded p-6 shadow-md">
         <h2 className="text-2xl text-primary font-mono text-center font-bold mb-4">
-          Customer Profile
+          Your Profile
         </h2>
         <div className="mb-4">
           <label className="block text-gray-900 font-mono font-bold mb-2">
@@ -71,7 +69,7 @@ const CustomerProfile = () => {
           </label>
           <input
             type="text"
-            value={customerInfo.name}
+            value={loggedUser.name}
             onChange={(e) => handleUpdateInfo("name", e.target.value)}
             className={`w-full px-3 py-2 border rounded shadow appearance-none ${
               editable ? "" : "bg-gray-100"
@@ -85,7 +83,7 @@ const CustomerProfile = () => {
           </label>
           <input
             type="email"
-            value={customerInfo.email}
+            value={loggedUser.email}
             onChange={(e) => handleUpdateInfo("email", e.target.value)}
             className={`w-full px-3 py-2 border rounded shadow appearance-none ${
               editable ? "" : "bg-gray-100"
@@ -99,7 +97,7 @@ const CustomerProfile = () => {
           </label>
           <input
             type="password"
-            value={customerInfo.password}
+            value={loggedUser.password}
             onChange={(e) => handleUpdateInfo("password", e.target.value)}
             className={`w-full px-3 py-2 border rounded shadow appearance-none ${
               editable ? "" : "bg-gray-100"
@@ -114,29 +112,31 @@ const CustomerProfile = () => {
           </label>
           <input
             type="text"
-            value={customerInfo.role}
+            value={loggedUser.role}
             readOnly
             className="w-full px-3 py-2 border rounded shadow appearance-none bg-gray-100"
           />
         </div>
-        {/* Show edit button if not already editing */}
-        {!editable && (
-          <button
-            onClick={handleEdit}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          >
-            Edit
-          </button>
-        )}
-        {/* Show save button if editing */}
-        {editable && (
-          <button
-            onClick={handleSave}
-            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-          >
-            Save
-          </button>
-        )}
+
+        <div className="flex items-end justify-end">
+          {!editable && (
+            <button
+              onClick={handleEdit}
+              className="bg-primary hover:bg-secondary hover:text-primary text-secondary font-mono font-bold py-2 px-4 rounded"
+            >
+              Edit
+            </button>
+          )}
+
+          {editable && (
+            <button
+              onClick={handleSave}
+              className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+            >
+              Save
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
