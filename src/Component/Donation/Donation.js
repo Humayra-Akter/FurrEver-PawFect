@@ -1,10 +1,17 @@
 import React from "react";
+import bg from "../../images/card-bg.jpg";
 
 const Donation = () => {
   return (
-    <div className="bg-gray-100 p-6 space-y-6">
+    <div className="p-6 space-y-12">
       {/* Donation Form */}
-      <section className="bg-white p-6 rounded shadow-md">
+      <section
+        style={{
+          background: `url(${bg})`,
+          backgroundSize: "cover",
+        }}
+        className=" max-w-4xl border-2 border-accent mx-auto p-6 rounded shadow-md"
+      >
         <h2 className="text-2xl font-bold mb-4">Donate to Support Our Cause</h2>
         <form className="space-y-4">
           <div>
@@ -29,7 +36,13 @@ const Donation = () => {
       </section>
 
       {/* Recent Donors */}
-      <section className="bg-white p-6 rounded shadow-md">
+      <section
+        style={{
+          background: `url(${bg})`,
+          backgroundSize: "cover",
+        }}
+        className="border-2 max-w-4xl border-accent mx-auto p-6 rounded shadow-md"
+      >
         <h2 className="text-2xl font-bold mb-4">Recent Donors</h2>
         <ul className="space-y-2">
           <li className="border-b pb-2">John Doe - $50</li>
@@ -39,7 +52,13 @@ const Donation = () => {
       </section>
 
       {/* Blog Posts */}
-      <section className="bg-white p-6 rounded shadow-md">
+      <section
+        style={{
+          background: `url(${bg})`,
+          backgroundSize: "cover",
+        }}
+        className="border-2 border-accent max-w-4xl mx-auto p-6 rounded shadow-md"
+      >
         <h2 className="text-2xl font-bold mb-4">Blog Posts</h2>
         <ul className="space-y-2">
           <li className="border-b pb-2">
@@ -61,7 +80,13 @@ const Donation = () => {
       </section>
 
       {/* Forum Discussions */}
-      <section className="bg-white p-6 rounded shadow-md">
+      <section
+        style={{
+          background: `url(${bg})`,
+          backgroundSize: "cover",
+        }}
+        className="border-2 border-accent max-w-4xl mx-auto  p-6 rounded shadow-md"
+      >
         <h2 className="text-2xl font-bold mb-4">Forum Discussions</h2>
         <ul className="space-y-2">
           <li className="border-b pb-2">
@@ -83,7 +108,13 @@ const Donation = () => {
       </section>
 
       {/* Donation History */}
-      <section className="bg-white p-6 rounded shadow-md">
+      <section
+        style={{
+          background: `url(${bg})`,
+          backgroundSize: "cover",
+        }}
+        className="border-2 border-accent max-w-4xl mx-auto  p-6 rounded shadow-md"
+      >
         <h2 className="text-2xl font-bold mb-4">Donation History</h2>
         <ul className="space-y-2">
           <li className="border-b pb-2">March 2024 - $2000</li>
