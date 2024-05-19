@@ -12,26 +12,39 @@ const Donation = () => {
         }}
         className=" max-w-4xl border-2 border-accent mx-auto p-6 rounded shadow-md"
       >
-        <h2 className="text-2xl font-bold mb-4">Donate to Support Our Cause</h2>
+        <h2 className="text-2xl font-mono text-secondary text-center font-bold mb-10">
+          Donate to Support Our Cause
+        </h2>
         <form className="space-y-4">
           <div>
-            <label className="block text-gray-700">Full Name</label>
-            <input type="text" className="w-full p-2 border rounded" />
+            <label className="block font-bold font-mono">Full Name</label>
+            <input
+              type="text"
+              className="w-full bg-slate-200 p-2 border rounded"
+            />
           </div>
           <div>
-            <label className="block text-gray-700">Email</label>
-            <input type="email" className="w-full p-2 border rounded" />
+            <label className="block font-bold font-mono">Email</label>
+            <input
+              type="email"
+              className="w-full p-2 border bg-slate-200 rounded"
+            />
           </div>
           <div>
-            <label className="block text-gray-700">Amount</label>
-            <input type="number" className="w-full p-2 border rounded" />
+            <label className="block font-bold font-mono">Amount</label>
+            <input
+              type="number"
+              className="w-full bg-slate-200 p-2 border rounded"
+            />
           </div>
-          <button
-            type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-          >
-            Donate
-          </button>
+          <div className="flex items-end justify-end">
+            <button
+              type="submit"
+              className="bg-primary hover:bg-secondary hover:text-primary text-secondary font-mono font-bold py-2 px-4 rounded"
+            >
+              Donate
+            </button>
+          </div>
         </form>
       </section>
 
