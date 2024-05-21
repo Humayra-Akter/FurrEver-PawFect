@@ -1,5 +1,6 @@
 import React from "react";
 import bg from "../../images/card-bg.jpg";
+import { Link } from "react-router-dom";
 
 const Donation = () => {
   return (
@@ -75,19 +76,28 @@ const Donation = () => {
         <h2 className="text-2xl font-bold mb-4">Blog Posts</h2>
         <ul className="space-y-2">
           <li className="border-b pb-2">
-            <a href="#" className="text-blue-500 hover:underline">
-              How Your Donations Help
-            </a>
+            <Link
+              to="/blog1"
+              className="text-secondary font-mono  hover:underline"
+            >
+              How Your Donations Help (read)
+            </Link>
           </li>
           <li className="border-b pb-2">
-            <a href="#" className="text-blue-500 hover:underline">
-              Success Stories from Our Shelter
-            </a>
+            <Link
+              to="/blog2"
+              className="text-secondary font-mono  hover:underline"
+            >
+              Success Stories from Our Shelter (read)
+            </Link>
           </li>
           <li className="border-b pb-2">
-            <a href="#" className="text-blue-500 hover:underline">
-              Volunteer Spotlight: Making a Difference
-            </a>
+            <Link
+              to="/blog3"
+              className="text-secondary font-mono  hover:underline"
+            >
+              Volunteer Spotlight: Making a Difference (read)
+            </Link>
           </li>
         </ul>
       </section>
@@ -103,17 +113,17 @@ const Donation = () => {
         <h2 className="text-2xl font-bold mb-4">Forum Discussions</h2>
         <ul className="space-y-2">
           <li className="border-b pb-2">
-            <a href="#" className="text-blue-500 hover:underline">
+            <a href="#" className="text-secondary font-mono  hover:underline">
               Best Practices for Animal Care
             </a>
           </li>
           <li className="border-b pb-2">
-            <a href="#" className="text-blue-500 hover:underline">
+            <a href="#" className="text-secondary font-mono  hover:underline">
               Share Your Adoption Stories
             </a>
           </li>
           <li className="border-b pb-2">
-            <a href="#" className="text-blue-500 hover:underline">
+            <a href="#" className="text-secondary font-mono  hover:underline">
               Tips for New Pet Owners
             </a>
           </li>

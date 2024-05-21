@@ -16,6 +16,9 @@ import DashboardStaff from "./Component/Dashboard/DashboardStaff/DashboardStaff"
 import DashboardCustomer from "./Component/Dashboard/DashboardCustomer/DashboardCustomer";
 import CustomerProfile from "./Component/Dashboard/DashboardCustomer/CustomerProfile";
 import OrderHistory from "./Component/Dashboard/DashboardCustomer/OrderHistory";
+import Blog1 from "./Component/Donation/Blog1";
+import Blog2 from "./Component/Donation/Blog2";
+import Blog3 from "./Component/Donation/Blog3";
 
 function App() {
   return (
@@ -29,6 +32,9 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
         <Route path="/feedback" element={<Feedback />} />
+        <Route path="/blog1" element={<Blog1 />} />
+        <Route path="/blog2" element={<Blog2 />} />
+        <Route path="/blog3" element={<Blog3 />} />
         <Route path="/donation" element={<Donation />} />
         <Route path="/dashboard" element={<Dashboard />} />
 
