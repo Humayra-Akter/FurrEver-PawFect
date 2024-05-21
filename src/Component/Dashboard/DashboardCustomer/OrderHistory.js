@@ -1,4 +1,5 @@
 import React from "react";
+import bg from "../../../images/card-bg.jpg";
 
 const OrderHistory = () => {
   return (
@@ -7,10 +8,15 @@ const OrderHistory = () => {
         Order History
       </h2>
 
-      {/* Individual order items */}
-      <div className="border border-gray-200 rounded-lg p-4 mb-4">
+      <div
+        style={{
+          background: `url(${bg})`,
+          backgroundSize: "cover",
+        }}
+        className="border-2 border-gray-700 bg-white rounded-lg p-4 shadow-md mb-4"
+      >
         <div className="flex justify-between items-center text-white font-mono mb-2">
-          <span className="text-lg font-semibold">Order #12345</span>
+          <span className="text-lg font-mono font-semibold">Order #12345</span>
           <span
             className="text-rose-500
           "

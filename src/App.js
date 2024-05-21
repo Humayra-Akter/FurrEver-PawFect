@@ -19,6 +19,8 @@ import OrderHistory from "./Component/Dashboard/DashboardCustomer/OrderHistory";
 import Blog1 from "./Component/Donation/Blog1";
 import Blog2 from "./Component/Donation/Blog2";
 import Blog3 from "./Component/Donation/Blog3";
+import CustomerCabin from "./Component/Dashboard/DashboardCustomer/CustomerCabin";
+import CustomerDonation from "./Component/Dashboard/DashboardCustomer/CustomerDonation";
 
 function App() {
   return (
@@ -41,6 +43,8 @@ function App() {
         <Route path="/customerDashboard" element={<DashboardCustomer />}>
           <Route index element={<CustomerProfile />}></Route>
           <Route path="orderHistory" element={<OrderHistory />}></Route>
+          <Route path="customerCabin" element={<CustomerCabin />}></Route>
+          <Route path="customerDonation" element={<CustomerDonation />}></Route>
         </Route>
 
         <Route path="/staffDashboard" element={<DashboardStaff />}>
