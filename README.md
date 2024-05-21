@@ -1,4 +1,4 @@
-a website regarding cats, dogs.... where vets, customer, staff, admin, rescuers are the user. multiple types of animal record like adoption, caretaker, cabin info, daycare, healthy-unhealthy animal, isolated animal record and so on.
+a website regarding cats, and dogs.... where vets, customers, staff, admin, and rescuers are the users. multiple types of animal records like adoption, caretaker, cabin info, daycare, healthy-unhealthy animal, isolated animal record, and so on.
 
 About Us:
 Learn Our Story
