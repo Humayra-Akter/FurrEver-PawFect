@@ -22,6 +22,11 @@ import Blog3 from "./Component/Donation/Blog3";
 import CustomerCabin from "./Component/Dashboard/DashboardCustomer/CustomerCabin";
 import CustomerDonation from "./Component/Dashboard/DashboardCustomer/CustomerDonation";
 import CustomerFeedback from "./Component/Dashboard/DashboardCustomer/CustomerFeedback";
+import CustomerPrice from "./Component/Dashboard/DashboardCustomer/CustomerPrice";
+import Appointments from "./Component/Dashboard/DashboardCustomer/Appointments";
+import Notifications from "./Component/Dashboard/DashboardCustomer/Notifications";
+import LoyaltyRewards from "./Component/Dashboard/DashboardCustomer/LoyaltyRewards";
+import Wishlist from "./Component/Dashboard/DashboardCustomer/Wishlist";
 
 function App() {
   return (
@@ -47,6 +52,11 @@ function App() {
           <Route path="customerCabin" element={<CustomerCabin />}></Route>
           <Route path="customerDonation" element={<CustomerDonation />}></Route>
           <Route path="customerFeedback" element={<CustomerFeedback />}></Route>
+          <Route path="customerPrice" element={<CustomerPrice />}></Route>
+          <Route path="appointments" element={<Appointments />}></Route>
+          <Route path="notifications" element={<Notifications />}></Route>
+          <Route path="loyalty" element={<LoyaltyRewards />}></Route>
+          <Route path="wishlist" element={<Wishlist />}></Route>
         </Route>
 
         <Route path="/staffDashboard" element={<DashboardStaff />}>
