@@ -18,8 +18,7 @@ const OrderHistory = () => {
         <div className="flex justify-between items-center text-white font-mono mb-2">
           <span className="text-lg font-mono font-semibold">Order #12345</span>
           <span
-            className="text-rose-500
-          "
+            className="text-rose-500"
           >
             Date: 2024-05-22
           </span>
