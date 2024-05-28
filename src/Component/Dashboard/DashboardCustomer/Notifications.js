@@ -38,11 +38,23 @@ const Notifications = () => {
     }
   };
 
+  const clearNotifications = () => {
+    setNotifications([]);
+  };
+
   return (
     <div className="p-6 min-h-screen mt-10 rounded-lg">
-      <h1 className="text-xl font-mono font-bold text-secondary mb-4">
-        Notifications
-      </h1>
+      <div className="flex justify-between items-center mb-4">
+        <h1 className="text-xl font-mono font-bold text-secondary">
+          Notifications
+        </h1>
+        <button
+          onClick={clearNotifications}
+          className="bg-primary hover:bg-secondary hover:text-primary text-secondary font-bold py-2 px-4 rounded"
+        >
+          Clear
+        </button>
+      </div>
       <div className="space-y-4">
         {notifications.map((notification) => (
           <div
@@ -54,6 +66,9 @@ const Notifications = () => {
             </p>
           </div>
         ))}
+        {notifications.length === 0 && (
+          <p className="text-gray-500">No notifications available.</p>
+        )}
       </div>
     </div>
   );
