@@ -2,50 +2,99 @@ import React from "react";
 import bg from "../../../images/card-bg.jpg";
 
 const Appointments = () => {
+  const upcomingAppointments = [
+    {
+      doctor: "Dr. Smith",
+      date: "2024-06-01",
+      time: "10:00 AM",
+      service: "general check-up",
+      status: "confirmed",
+    },
+    {
+      doctor: "Dr. Brown",
+      date: "2024-06-03",
+      time: "02:00 PM",
+      service: "vaccination",
+      status: "pending",
+    },
+  ];
+
+  const pastAppointments = [
+    {
+      doctor: "Dr. Green",
+      date: "2024-05-15",
+      time: "11:00 AM",
+      service: "grooming",
+      status: "completed",
+    },
+    {
+      doctor: "Dr. White",
+      date: "2024-05-10",
+      time: "09:00 AM",
+      service: "general check-up",
+      status: "completed",
+    },
+  ];
+
+  const getStatusClass = (status) => {
+    switch (status) {
+      case "pending":
+        return "text-red-500";
+      case "confirmed":
+        return "text-yellow-500";
+      case "completed":
+        return "text-green-500";
+      default:
+        return "text-gray-500";
+    }
+  };
+
   return (
     <div className="p-6 shadow-md mt-10 rounded-lg">
-      {/* Section for Booking an Appointment */}
-
       {/* Section for Upcoming Appointments */}
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4">Upcoming Appointments</h2>
+        <h1 className="text-xl font-mono font-bold text-secondary mb-4">
+          Upcoming Appointments
+        </h1>
         <div className="space-y-4">
-          <div className="border rounded-md p-4 shadow-sm">
-            <p className="text-gray-700">
-              Appointment with Dr. Smith on 2024-06-01 at 10:00 AM for a general
-              check-up.
-            </p>
-            <p className="text-sm text-gray-500">Status: Confirmed</p>
-          </div>
-          <div className="border rounded-md p-4 shadow-sm">
-            <p className="text-gray-700">
-              Appointment with Dr. Brown on 2024-06-03 at 02:00 PM for
-              vaccination.
-            </p>
-            <p className="text-sm text-gray-500">Status: Pending</p>
-          </div>
+          {upcomingAppointments.map((appointment, index) => (
+            <div key={index} className="border rounded-md p-4 shadow-sm">
+              <p className="text-gray-100">
+                Appointment with {appointment.doctor} on {appointment.date} at{" "}
+                {appointment.time} for {appointment.service}.
+              </p>
+              <p className={`text-sm ${getStatusClass(appointment.status)}`}>
+                Status:{" "}
+                {appointment.status.charAt(0).toUpperCase() +
+                  appointment.status.slice(1)}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Section for Past Appointments */}
       <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4">Past Appointments</h2>
+        <h1 className="text-xl font-mono font-bold text-secondary mb-4">
+          Past Appointments
+        </h1>
         <div className="space-y-4">
-          <div className="border rounded-md p-4 shadow-sm">
-            <p className="text-gray-700">
-              Appointment with Dr. Green on 2024-05-15 at 11:00 AM for grooming.
-            </p>
-            <p className="text-sm text-gray-500">Status: Completed</p>
-          </div>
-          <div className="border rounded-md p-4 shadow-sm">
-            <p className="text-gray-700">
-              Appointment with Dr. White on 2024-05-10 at 09:00 AM for a general
-              check-up.
-            </p>
-            <p className="text-sm text-gray-500">Status: Completed</p>
-          </div>
+          {pastAppointments.map((appointment, index) => (
+            <div key={index} className="border rounded-md p-4 shadow-sm">
+              <p className="text-gray-100">
+                Appointment with {appointment.doctor} on {appointment.date} at{" "}
+                {appointment.time} for {appointment.service}.
+              </p>
+              <p className={`text-sm ${getStatusClass(appointment.status)}`}>
+                Status:{" "}
+                {appointment.status.charAt(0).toUpperCase() +
+                  appointment.status.slice(1)}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
+
       <div className="grid grid-cols-2 mt-16 gap-7">
         <div
           style={{
@@ -55,7 +104,7 @@ const Appointments = () => {
           className="border-2 border-gray-700 bg-white max-w-xl rounded p-4 shadow-md"
         >
           <h2 className="text-xl font-mono font-bold text-secondary mb-4">
-            Book an Appointments
+            Book an Appointment
           </h2>
           <form className="space-y-4">
             <div>
@@ -74,7 +123,7 @@ const Appointments = () => {
             <div>
               <label
                 htmlFor="email"
-                className="font-semibold mb-2 font-mono bloc"
+                className="font-semibold mb-2 font-mono block"
               >
                 Email
               </label>
