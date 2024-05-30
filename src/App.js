@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Component/Home/Home";
 import About from "./Component/About/About";
@@ -12,7 +12,6 @@ import Dashboard from "./Component/Dashboard/Dashboard";
 import Feedback from "./Component/Feedback/Feedback";
 import Donation from "./Component/Donation/Donation";
 import { ToastContainer } from "react-toastify";
-import DashboardStaff from "./Component/Dashboard/DashboardStaff/DashboardStaff";
 import DashboardCustomer from "./Component/Dashboard/DashboardCustomer/DashboardCustomer";
 import CustomerProfile from "./Component/Dashboard/DashboardCustomer/CustomerProfile";
 import OrderHistory from "./Component/Dashboard/DashboardCustomer/OrderHistory";
@@ -27,9 +26,15 @@ import Appointments from "./Component/Dashboard/DashboardCustomer/Appointments";
 import Notifications from "./Component/Dashboard/DashboardCustomer/Notifications";
 import LoyaltyRewards from "./Component/Dashboard/DashboardCustomer/LoyaltyRewards";
 import Wishlist from "./Component/Dashboard/DashboardCustomer/Wishlist";
+import StaffProfile from "./Component/Dashboard/DashboardStaff/StaffProfile";
+import DashboardStaff from "./Component/Dashboard/DashboardStaff/DashboardStaff";
 
 function App() {
-  const userRole = localStorage.getItem("userRole");
+  const [user, setUser] = useState("");
+  useEffect(() => {
+    const userRole = localStorage.getItem("userRole");
+    setUser(userRole);
+  }, []);
 
   return (
     <>
@@ -47,35 +52,52 @@ function App() {
         <Route path="/blog3" element={<Blog3 />} />
         <Route path="/donation" element={<Donation />} />
         {/* <Route path="/dashboard" element={<Dashboard />} /> */}
-
-        <Route path={`/${userRole}Dashboard`} element={<DashboardCustomer />}>
-          <Route index element={<CustomerProfile />}></Route>
-          <Route path="orderHistory" element={<OrderHistory />}></Route>
-          <Route path="customerCabin" element={<CustomerCabin />}></Route>
-          <Route path="customerDonation" element={<CustomerDonation />}></Route>
-          <Route path="customerFeedback" element={<CustomerFeedback />}></Route>
-          <Route path="customerPrice" element={<CustomerPrice />}></Route>
-          <Route path="appointments" element={<Appointments />}></Route>
-          <Route path="notifications" element={<Notifications />}></Route>
-          <Route path="loyalty" element={<LoyaltyRewards />}></Route>
-          <Route path="wishlist" element={<Wishlist />}></Route>
-        </Route>
-
-        <Route path={`/${userRole}Dashboard`} element={<DashboardStaff />}>
-          <Route index element={<CustomerProfile />}></Route>
-          {/* <Route index element={<StaffInfo />} />
-          <Route path="staffFindCabin" element={<StaffFindCabin />} />
+        {user === "customer" ? (
+          <>
+            {" "}
+            <Route path="customerDashboard" element={<DashboardCustomer />}>
+              <Route index element={<CustomerProfile />}></Route>
+              <Route path="orderHistory" element={<OrderHistory />}></Route>
+              <Route path="customerCabin" element={<CustomerCabin />}></Route>
+              <Route
+                path="customerDonation"
+                element={<CustomerDonation />}
+              ></Route>
+              <Route
+                path="customerFeedback"
+                element={<CustomerFeedback />}
+              ></Route>
+              <Route path="customerPrice" element={<CustomerPrice />}></Route>
+              <Route path="appointments" element={<Appointments />}></Route>
+              <Route path="notifications" element={<Notifications />}></Route>
+              <Route path="loyalty" element={<LoyaltyRewards />}></Route>
+              <Route path="wishlist" element={<Wishlist />}></Route>
+            </Route>
+          </>
+        ) : (
+          <></>
+        )}
+        {user === "staff" ? (
+          <>
+            <Route path="staffDashboard" element={<DashboardStaff />}>
+              <Route index element={<StaffProfile />} />
+              {/*     <Route path="staffFindCabin" element={<StaffFindCabin />} />
           <Route path="staffDaycareAnimal" element={<StaffDaycareAnimal />} />
           <Route path="staffRescuedAnimal" element={<StaffRescuedAnimal />} />
           <Route path="staffSchedules" element={<StaffSchedules />} />
           <Route path="staffReports" element={<StaffReports />} />
           <Route path="staffInventory" element={<StaffInventory />} />
           <Route path="staffTasks" element={<StaffTasks />} />
-          <Route path="staffMessages" element={<StaffMessages />} /> */}
-        </Route>
-
-        <Route path="dashboard" element={<Dashboard />}>
-          {/* <Route index element={<Admin />}></Route>
+          <Route path="staffMessages" element={<StaffMessages />} />  */}
+            </Route>
+          </>
+        ) : (
+          <></>
+        )}
+        {user === "admin" ? (
+          <>
+            <Route path="adminDashboard" element={<Dashboard />}>
+              {/* <Route index element={<Admin />}></Route>
           <Route path="staff" element={<Staff />}></Route>
           <Route path="vet" element={<Vet />}></Route>
           <Route path="customers" element={<Customers />}></Route>
@@ -86,7 +108,11 @@ function App() {
           <Route path="feedback" element={<Feedback />}></Route>
           <Route path="daycareAnimal" element={<DaycareAnimal />}></Route>
           <Route path="rescuedAnimal" element={<RescuedAnimal />}></Route> */}
-        </Route>
+            </Route>
+          </>
+        ) : (
+          <></>
+        )}
 
         <Route path="*" element={<Error />}></Route>
       </Routes>
