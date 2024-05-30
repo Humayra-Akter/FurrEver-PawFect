@@ -29,6 +29,8 @@ import LoyaltyRewards from "./Component/Dashboard/DashboardCustomer/LoyaltyRewar
 import Wishlist from "./Component/Dashboard/DashboardCustomer/Wishlist";
 
 function App() {
+  const userRole = localStorage.getItem("userRole");
+
   return (
     <>
       <Navbar />
@@ -44,9 +46,9 @@ function App() {
         <Route path="/blog2" element={<Blog2 />} />
         <Route path="/blog3" element={<Blog3 />} />
         <Route path="/donation" element={<Donation />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
 
-        <Route path="/customerDashboard" element={<DashboardCustomer />}>
+        <Route path={`/${userRole}Dashboard`} element={<DashboardCustomer />}>
           <Route index element={<CustomerProfile />}></Route>
           <Route path="orderHistory" element={<OrderHistory />}></Route>
           <Route path="customerCabin" element={<CustomerCabin />}></Route>
@@ -59,17 +61,17 @@ function App() {
           <Route path="wishlist" element={<Wishlist />}></Route>
         </Route>
 
-        <Route path="/staffDashboard" element={<DashboardStaff />}>
-          {/* <Route index element={<StaffInfo />}></Route>
-          <Route path="staffFindCabin" element={<StaffFindCabin />}></Route>
-          <Route
-            path="staffDaycareAnimal"
-            element={<StaffDaycareAnimal />}
-          ></Route>
-          <Route
-            path="staffRescuedAnimal"
-            element={<StaffRescuedAnimal />}
-          ></Route> */}
+        <Route path={`/${userRole}Dashboard`} element={<DashboardStaff />}>
+          <Route index element={<CustomerProfile />}></Route>
+          {/* <Route index element={<StaffInfo />} />
+          <Route path="staffFindCabin" element={<StaffFindCabin />} />
+          <Route path="staffDaycareAnimal" element={<StaffDaycareAnimal />} />
+          <Route path="staffRescuedAnimal" element={<StaffRescuedAnimal />} />
+          <Route path="staffSchedules" element={<StaffSchedules />} />
+          <Route path="staffReports" element={<StaffReports />} />
+          <Route path="staffInventory" element={<StaffInventory />} />
+          <Route path="staffTasks" element={<StaffTasks />} />
+          <Route path="staffMessages" element={<StaffMessages />} /> */}
         </Route>
 
         <Route path="dashboard" element={<Dashboard />}>
