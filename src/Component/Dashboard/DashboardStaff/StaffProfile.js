@@ -24,20 +24,11 @@ const StaffProfile = () => {
 
   return (
     <div className="p-6 rounded-lg mt-10">
-      <div className="mb-10">
-        <h1 className="text-2xl font-bold font-mono text-secondary">
-          Staff Profile
-        </h1>
-        <p className="text-gray-600 mt-2">
-          View and manage your profile information.
-        </p>
-      </div>
-
       <section className="mb-8">
         <h2 className="text-xl font-bold font-mono text-secondary mb-4">
           Personal Information
         </h2>
-        <div className="bg-gray-100 p-4 rounded-lg shadow-md">
+        <div className="bg-gray-100 p-4 text-black rounded-lg shadow-md">
           <p>
             <strong>Name:</strong> {staffDetails.name}
           </p>
@@ -60,7 +51,7 @@ const StaffProfile = () => {
         <h2 className="text-xl font-bold font-mono text-secondary mb-4">
           Work Schedule
         </h2>
-        <div className="bg-gray-100 p-4 rounded-lg shadow-md">
+        <div className="bg-gray-100 text-black p-4 rounded-lg shadow-md">
           <ul>
             {staffDetails.workSchedule.map((schedule, index) => (
               <li key={index}>
@@ -75,7 +66,7 @@ const StaffProfile = () => {
         <h2 className="text-xl font-bold font-mono text-secondary mb-4">
           Recent Activities
         </h2>
-        <div className="bg-gray-100 p-4 rounded-lg shadow-md">
+        <div className="bg-gray-100 p-4 rounded-lg text-black shadow-md">
           <ul className="list-disc list-inside">
             {staffDetails.recentActivities.map((activity, index) => (
               <li key={index}>{activity}</li>

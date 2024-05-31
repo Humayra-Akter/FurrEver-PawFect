@@ -8,7 +8,7 @@ const DashboardStaff = () => {
         <input id="staff-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-left">
           <h1 className="w-full h-full font-extrabold text-left text-5xl text-secondary font-mono pl-4 pt-7">
-            Staff Dashboard
+            Dashboard
           </h1>
           <Outlet />
           <label
