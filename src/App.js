@@ -28,6 +28,14 @@ import LoyaltyRewards from "./Component/Dashboard/DashboardCustomer/LoyaltyRewar
 import Wishlist from "./Component/Dashboard/DashboardCustomer/Wishlist";
 import StaffProfile from "./Component/Dashboard/DashboardStaff/StaffProfile";
 import DashboardStaff from "./Component/Dashboard/DashboardStaff/DashboardStaff";
+import StaffFindCabin from "./Component/Dashboard/DashboardStaff/StaffFindCabin";
+import StaffDaycareAnimal from "./Component/Dashboard/DashboardStaff/StaffDaycareAnimal";
+import StaffRescuedAnimal from "./Component/Dashboard/DashboardStaff/StaffRescuedAnimal";
+import StaffSchedules from "./Component/Dashboard/DashboardStaff/StaffSchedules";
+import StaffReports from "./Component/Dashboard/DashboardStaff/StaffReports";
+import StaffInventory from "./Component/Dashboard/DashboardStaff/StaffInventory";
+import StaffTasks from "./Component/Dashboard/DashboardStaff/StaffTasks";
+import StaffMessages from "./Component/Dashboard/DashboardStaff/StaffMessages";
 
 function App() {
   const [user, setUser] = useState("");
@@ -81,14 +89,20 @@ function App() {
           <>
             <Route path="staffDashboard" element={<DashboardStaff />}>
               <Route index element={<StaffProfile />} />
-              {/*     <Route path="staffFindCabin" element={<StaffFindCabin />} />
-          <Route path="staffDaycareAnimal" element={<StaffDaycareAnimal />} />
-          <Route path="staffRescuedAnimal" element={<StaffRescuedAnimal />} />
-          <Route path="staffSchedules" element={<StaffSchedules />} />
-          <Route path="staffReports" element={<StaffReports />} />
-          <Route path="staffInventory" element={<StaffInventory />} />
-          <Route path="staffTasks" element={<StaffTasks />} />
-          <Route path="staffMessages" element={<StaffMessages />} />  */}
+              <Route path="staffFindCabin" element={<StaffFindCabin />} />
+              <Route
+                path="staffDaycareAnimal"
+                element={<StaffDaycareAnimal />}
+              />
+              <Route
+                path="staffRescuedAnimal"
+                element={<StaffRescuedAnimal />}
+              />
+              <Route path="staffSchedules" element={<StaffSchedules />} />
+              <Route path="staffReports" element={<StaffReports />} />
+              <Route path="staffInventory" element={<StaffInventory />} />
+              <Route path="staffTasks" element={<StaffTasks />} />
+              <Route path="staffMessages" element={<StaffMessages />} />
             </Route>
           </>
         ) : (
