@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 const StaffReports = () => {
-  // Dummy data for demonstration
   const [reports, setReports] = useState([]);
+  const [loggedInStaff, setLoggedInStaff] = useState("John Doe"); // Example logged-in staff member
 
   useEffect(() => {
     // Fetch staff reports data from backend (dummy data for now)
@@ -53,52 +53,98 @@ const StaffReports = () => {
     }
   };
 
+  const getReportByStaffName = (reportType, staffName) => {
+    return (
+      reports
+        .find((report) => report.type === reportType)
+        ?.data.filter((item) => item.staffName === staffName) || []
+    );
+  };
+
   return (
     <div className="p-6 mt-10 rounded-lg min-h-screen">
       <h1 className="text-2xl font-bold font-mono text-secondary mb-4">
         Staff Reports
       </h1>
-      {reports.map((report) => (
-        <div key={report.id} className="mb-8">
-          <h2 className="text-xl font-bold mb-4">{report.type}</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {report.type === "Attendance" &&
-              report.data.map((item, index) => (
-                <div
-                  key={index}
-                  className={`p-4 rounded shadow-md ${getStatusColor(
-                    item.status
-                  )}`}
-                >
-                  <h3 className="text-lg font-bold">{item.staffName}</h3>
-                  <p className="mt-2">Date: {item.date}</p>
-                  <p>Status: {item.status}</p>
+
+      <div className="flex flex-wrap text-black -mx-2">
+        {reports.map((report) => (
+          <div key={report.id} className="w-full md:w-1/2 lg:w-1/3 p-2">
+            <div className="bg-white shadow-md rounded-lg p-4">
+              <h2 className="text-xl font-bold mb-4">{report.type}</h2>
+
+              {/* Individual Report Section */}
+              <div className="mb-4 ">
+                <h3 className="text-lg  font-semibold mb-2">
+                  Your Performance
+                </h3>
+                <div className="space-y-2">
+                  {getReportByStaffName(report.type, loggedInStaff).map(
+                    (item, index) => (
+                      <div
+                        key={index}
+                        className={`p-4 rounded ${
+                          report.type === "Attendance"
+                            ? getStatusColor(item.status)
+                            : "bg-blue-100 text-blue-800"
+                        }`}
+                      >
+                        {report.type === "Attendance" ? (
+                          <>
+                            <p>Date: {item.date}</p>
+                            <p>Status: {item.status}</p>
+                          </>
+                        ) : report.type === "Performance" ? (
+                          <p>Rating: {item.rating}</p>
+                        ) : (
+                          <>
+                            <p>Task: {item.task}</p>
+                            <p>Count: {item.count}</p>
+                          </>
+                        )}
+                      </div>
+                    )
+                  )}
                 </div>
-              ))}
-            {report.type === "Performance" &&
-              report.data.map((item, index) => (
-                <div
-                  key={index}
-                  className="p-4 bg-blue-100 text-blue-800 rounded shadow-md"
-                >
-                  <h3 className="text-lg font-bold">{item.staffName}</h3>
-                  <p className="mt-2">Rating: {item.rating}</p>
+              </div>
+
+              {/* General Report Section */}
+              <div>
+                <h3 className="text-lg font-semibold mb-2">Other Staff</h3>
+                <div className="space-y-2">
+                  {report.data
+                    .filter((item) => item.staffName !== loggedInStaff)
+                    .map((item, index) => (
+                      <div
+                        key={index}
+                        className={`p-4 rounded ${
+                          report.type === "Attendance"
+                            ? getStatusColor(item.status)
+                            : "bg-gray-100 text-gray-800"
+                        }`}
+                      >
+                        <h4 className="font-bold">{item.staffName}</h4>
+                        {report.type === "Attendance" ? (
+                          <>
+                            <p>Date: {item.date}</p>
+                            <p>Status: {item.status}</p>
+                          </>
+                        ) : report.type === "Performance" ? (
+                          <p>Rating: {item.rating}</p>
+                        ) : (
+                          <>
+                            <p>Task: {item.task}</p>
+                            <p>Count: {item.count}</p>
+                          </>
+                        )}
+                      </div>
+                    ))}
                 </div>
-              ))}
-            {report.type === "Tasks Completed" &&
-              report.data.map((item, index) => (
-                <div
-                  key={index}
-                  className="p-4 bg-yellow-100 text-yellow-800 rounded shadow-md"
-                >
-                  <h3 className="text-lg font-bold">{item.staffName}</h3>
-                  <p className="mt-2">Task: {item.task}</p>
-                  <p>Count: {item.count}</p>
-                </div>
-              ))}
+              </div>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
