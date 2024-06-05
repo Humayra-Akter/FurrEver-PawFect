@@ -120,14 +120,21 @@ const StaffDaycareAnimal = () => {
             <label className="block text-gray-100 font-bold mb-2">
               Health Status
             </label>
-            <input
-              type="text"
+            <select
               name="healthStatus"
               value={newAnimal.healthStatus}
               onChange={handleChange}
               required
-              className="w-full px-3 py-2 border rounded-md"
-            />
+              className="w-full px-3 text-gray-100 py-2 border rounded-md"
+            >
+              <option value="" disabled>
+                Select Health Status
+              </option>
+              <option value="Excellent">Excellent</option>
+              <option value="Good">Good</option>
+              <option value="Fair">Fair</option>
+              <option value="Poor">Poor</option>
+            </select>
           </div>
           <div className="md:col-span-2">
             <label className="block text-gray-100 font-bold mb-2">
@@ -145,7 +152,7 @@ const StaffDaycareAnimal = () => {
         </div>
         <button
           type="submit"
-          className="mt-4 bg-primary text-white font-bold py-2 px-4 rounded hover:bg-secondary"
+          className="mt-4 bg-primary text-white font-bold py-2 px-4 rounded hover:bg-secondary hover:text-primary"
         >
           Add Animal
         </button>
