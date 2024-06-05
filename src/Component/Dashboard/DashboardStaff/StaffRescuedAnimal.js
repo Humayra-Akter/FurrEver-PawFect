@@ -2,6 +2,13 @@ import React, { useState, useEffect } from "react";
 
 const StaffRescuedAnimal = () => {
   const [rescuedAnimals, setRescuedAnimals] = useState([]);
+  const [newAnimal, setNewAnimal] = useState({
+    name: "",
+    type: "",
+    rescueDate: "",
+    healthStatus: "",
+    caretaker: "",
+  });
 
   useEffect(() => {
     // Fetch rescued animal data from backend (dummy data for now)
@@ -42,11 +49,108 @@ const StaffRescuedAnimal = () => {
     setRescuedAnimals(dummyData);
   }, []);
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setNewAnimal((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setRescuedAnimals((prev) => [
+      ...prev,
+      { id: prev.length + 1, ...newAnimal },
+    ]);
+    setNewAnimal({
+      name: "",
+      type: "",
+      rescueDate: "",
+      healthStatus: "",
+      caretaker: "",
+    });
+  };
+
   return (
-    <div className="p-6 mt-10 rounded-lg min-h-screen">
+    <div className="p-6 mt-10 rounded-lg">
       <h1 className="text-2xl font-bold font-mono text-secondary mb-4">
         Rescued Animals
       </h1>
+
+      <form
+        onSubmit={handleSubmit}
+        className="mb-6 p-4 bg-gray-100 shadow-md rounded-md"
+      >
+        <h2 className="text-xl font-bold mb-4">Add New Rescued Animal</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label className="block text-gray-700 font-bold mb-2">Name</label>
+            <input
+              type="text"
+              name="name"
+              value={newAnimal.name}
+              onChange={handleChange}
+              required
+              className="w-full px-3 py-2 border rounded-md"
+            />
+          </div>
+          <div>
+            <label className="block text-gray-700 font-bold mb-2">Type</label>
+            <input
+              type="text"
+              name="type"
+              value={newAnimal.type}
+              onChange={handleChange}
+              required
+              className="w-full px-3 py-2 border rounded-md"
+            />
+          </div>
+          <div>
+            <label className="block text-gray-700 font-bold mb-2">
+              Rescue Date
+            </label>
+            <input
+              type="date"
+              name="rescueDate"
+              value={newAnimal.rescueDate}
+              onChange={handleChange}
+              required
+              className="w-full px-3 py-2 border rounded-md"
+            />
+          </div>
+          <div>
+            <label className="block text-gray-700 font-bold mb-2">
+              Health Status
+            </label>
+            <input
+              type="text"
+              name="healthStatus"
+              value={newAnimal.healthStatus}
+              onChange={handleChange}
+              required
+              className="w-full px-3 py-2 border rounded-md"
+            />
+          </div>
+          <div className="md:col-span-2">
+            <label className="block text-gray-700 font-bold mb-2">
+              Caretaker
+            </label>
+            <input
+              type="text"
+              name="caretaker"
+              value={newAnimal.caretaker}
+              onChange={handleChange}
+              required
+              className="w-full px-3 py-2 border rounded-md"
+            />
+          </div>
+        </div>
+        <button
+          type="submit"
+          className="mt-4 bg-primary text-white font-bold py-2 px-4 rounded hover:bg-secondary"
+        >
+          Add Animal
+        </button>
+      </form>
+
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200 shadow-md rounded-md">
           <thead className="bg-gray-500">
