@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import bg from "../../../images/card-bg.jpg";
 
 const StaffRescuedAnimal = () => {
   const [rescuedAnimals, setRescuedAnimals] = useState([]);
@@ -76,13 +77,21 @@ const StaffRescuedAnimal = () => {
       </h1>
 
       <form
+        style={{
+          background: `url(${bg})`,
+          backgroundSize: "cover",
+        }}
+        className=" border-4 border-accent mb-6 bg-white p-4 shadow-md"
         onSubmit={handleSubmit}
-        className="mb-6 p-4 bg-gray-100 shadow-md rounded-md"
       >
-        <h2 className="text-xl font-bold mb-4">Add New Rescued Animal</h2>
+        <h2 className="text-xl text-white font-mono font-bold mb-4">
+          Add New Rescued Animal
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-gray-700 font-bold mb-2">Name</label>
+            <label className="block text-gray-100 font-mono font-bold mb-2">
+              Name
+            </label>
             <input
               type="text"
               name="name"
@@ -93,7 +102,9 @@ const StaffRescuedAnimal = () => {
             />
           </div>
           <div>
-            <label className="block text-gray-700 font-bold mb-2">Type</label>
+            <label className="block text-gray-100 font-mono font-bold mb-2">
+              Type
+            </label>
             <input
               type="text"
               name="type"
@@ -104,7 +115,7 @@ const StaffRescuedAnimal = () => {
             />
           </div>
           <div>
-            <label className="block text-gray-700 font-bold mb-2">
+            <label className="block text-gray-100 font-mono font-bold mb-2">
               Rescue Date
             </label>
             <input
@@ -117,7 +128,7 @@ const StaffRescuedAnimal = () => {
             />
           </div>
           <div>
-            <label className="block text-gray-700 font-bold mb-2">
+            <label className="block text-gray-100 font-mono font-bold mb-2">
               Health Status
             </label>
             <input
@@ -130,7 +141,7 @@ const StaffRescuedAnimal = () => {
             />
           </div>
           <div className="md:col-span-2">
-            <label className="block text-gray-700 font-bold mb-2">
+            <label className="block text-gray-100 font-mono font-bold mb-2">
               Caretaker
             </label>
             <input
@@ -145,7 +156,7 @@ const StaffRescuedAnimal = () => {
         </div>
         <button
           type="submit"
-          className="mt-4 bg-primary text-white font-bold py-2 px-4 rounded hover:bg-secondary"
+          className="mt-4 bg-primary text-white font-mono font-bold py-2 px-4 rounded hover:bg-secondary hover:text-primary"
         >
           Add Animal
         </button>
