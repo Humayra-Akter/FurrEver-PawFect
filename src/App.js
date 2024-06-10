@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import sun from "../src/images/sun.png";
+import moon from "../src/images/moon.png";
 import Home from "./Component/Home/Home";
 import About from "./Component/About/About";
 import Navbar from "./Component/Shared/Navbar";
@@ -44,74 +46,86 @@ function App() {
     setUser(userRole);
   }, []);
 
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const theme = darkMode ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [darkMode]);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/feedback" element={<Feedback />} />
-        <Route path="/blog1" element={<Blog1 />} />
-        <Route path="/blog2" element={<Blog2 />} />
-        <Route path="/blog3" element={<Blog3 />} />
-        <Route path="/donation" element={<Donation />} />
-        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
-        {user === "customer" ? (
-          <>
-            {" "}
-            <Route path="customerDashboard" element={<DashboardCustomer />}>
-              <Route index element={<CustomerProfile />}></Route>
-              <Route path="orderHistory" element={<OrderHistory />}></Route>
-              <Route path="customerCabin" element={<CustomerCabin />}></Route>
-              <Route
-                path="customerDonation"
-                element={<CustomerDonation />}
-              ></Route>
-              <Route
-                path="customerFeedback"
-                element={<CustomerFeedback />}
-              ></Route>
-              <Route path="customerPrice" element={<CustomerPrice />}></Route>
-              <Route path="appointments" element={<Appointments />}></Route>
-              <Route path="notifications" element={<Notifications />}></Route>
-              <Route path="loyalty" element={<LoyaltyRewards />}></Route>
-              <Route path="wishlist" element={<Wishlist />}></Route>
-            </Route>
-          </>
-        ) : (
-          <></>
-        )}
-        {user === "staff" ? (
-          <>
-            <Route path="staffDashboard" element={<DashboardStaff />}>
-              <Route index element={<StaffProfile />} />
-              <Route path="staffFindCabin" element={<StaffFindCabin />} />
-              <Route
-                path="staffDaycareAnimal"
-                element={<StaffDaycareAnimal />}
-              />
-              <Route
-                path="staffRescuedAnimal"
-                element={<StaffRescuedAnimal />}
-              />
-              <Route path="staffSchedules" element={<StaffSchedules />} />
-              <Route path="staffReports" element={<StaffReports />} />
-              <Route path="staffInventory" element={<StaffInventory />} />
-              <Route path="staffTasks" element={<StaffTasks />} />
-              <Route path="staffMessages" element={<StaffMessages />} />
-            </Route>
-          </>
-        ) : (
-          <></>
-        )}
-        {user === "admin" ? (
-          <>
-            <Route path="adminDashboard" element={<Dashboard />}>
-              {/* <Route index element={<Admin />}></Route>
+    <div className={`min-h-screen ${darkMode && "dark"}`}>
+      <div className="bg-white dark:bg-black min-h-screen">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/feedback" element={<Feedback />} />
+          <Route path="/blog1" element={<Blog1 />} />
+          <Route path="/blog2" element={<Blog2 />} />
+          <Route path="/blog3" element={<Blog3 />} />
+          <Route path="/donation" element={<Donation />} />
+          {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+          {user === "customer" ? (
+            <>
+              {" "}
+              <Route path="customerDashboard" element={<DashboardCustomer />}>
+                <Route index element={<CustomerProfile />}></Route>
+                <Route path="orderHistory" element={<OrderHistory />}></Route>
+                <Route path="customerCabin" element={<CustomerCabin />}></Route>
+                <Route
+                  path="customerDonation"
+                  element={<CustomerDonation />}
+                ></Route>
+                <Route
+                  path="customerFeedback"
+                  element={<CustomerFeedback />}
+                ></Route>
+                <Route path="customerPrice" element={<CustomerPrice />}></Route>
+                <Route path="appointments" element={<Appointments />}></Route>
+                <Route path="notifications" element={<Notifications />}></Route>
+                <Route path="loyalty" element={<LoyaltyRewards />}></Route>
+                <Route path="wishlist" element={<Wishlist />}></Route>
+              </Route>
+            </>
+          ) : (
+            <></>
+          )}
+          {user === "staff" ? (
+            <>
+              <Route path="staffDashboard" element={<DashboardStaff />}>
+                <Route index element={<StaffProfile />} />
+                <Route path="staffFindCabin" element={<StaffFindCabin />} />
+                <Route
+                  path="staffDaycareAnimal"
+                  element={<StaffDaycareAnimal />}
+                />
+                <Route
+                  path="staffRescuedAnimal"
+                  element={<StaffRescuedAnimal />}
+                />
+                <Route path="staffSchedules" element={<StaffSchedules />} />
+                <Route path="staffReports" element={<StaffReports />} />
+                <Route path="staffInventory" element={<StaffInventory />} />
+                <Route path="staffTasks" element={<StaffTasks />} />
+                <Route path="staffMessages" element={<StaffMessages />} />
+              </Route>
+            </>
+          ) : (
+            <></>
+          )}
+          {user === "admin" ? (
+            <>
+              <Route path="adminDashboard" element={<Dashboard />}>
+                {/* <Route index element={<Admin />}></Route>
           <Route path="staff" element={<Staff />}></Route>
           <Route path="vet" element={<Vet />}></Route>
           <Route path="customers" element={<Customers />}></Route>
@@ -122,16 +136,27 @@ function App() {
           <Route path="feedback" element={<Feedback />}></Route>
           <Route path="daycareAnimal" element={<DaycareAnimal />}></Route>
           <Route path="rescuedAnimal" element={<RescuedAnimal />}></Route> */}
-            </Route>
-          </>
-        ) : (
-          <></>
-        )}
+              </Route>
+            </>
+          ) : (
+            <></>
+          )}
 
-        <Route path="*" element={<Error />}></Route>
-      </Routes>
-      <ToastContainer />
-    </>
+          <Route path="*" element={<Error />}></Route>
+        </Routes>
+        <button
+          onClick={toggleDarkMode}
+          className="p-2 bg-primary text-secondary fixed bottom-5 left-5 rounded-full"
+        >
+          {darkMode ? (
+            <img className="w-10 h-10" src={sun} alt="Light Mode" />
+          ) : (
+            <img className="w-10 h-10" src={moon} alt="Dark Mode" />
+          )}
+        </button>
+        <ToastContainer />
+      </div>
+    </div>
   );
 }
 

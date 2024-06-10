@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="flex-grow">
-      <footer className="footer mt-16 items-center p-4 bg-black text-neutral-content bottom-0 w-full">
+      <footer className="footer mt-16 items-center p-4 text-neutral-content bottom-0 w-full">
         <aside className="items-center grid-flow-col">
           <svg
             width="36"

@@ -9,7 +9,7 @@ import Footer from "../Shared/Footer";
 
 const Contact = () => {
   return (
-    <div className="bg-black p-8">
+    <div className=" p-8">
       <div className="lg:max-w-5xl mx-auto">
         <div className=" py-12">
           <div

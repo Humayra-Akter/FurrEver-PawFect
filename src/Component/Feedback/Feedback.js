@@ -3,7 +3,7 @@ import bg from "../../images/card-bg.jpg";
 
 const Feedback = () => {
   return (
-    <div className="bg-black my-20 mx-40">
+    <div className=" my-20 mx-40">
       <h2 className="text-3xl font-semibold text-secondary mb-6 text-center font-mono">
         Feedback
       </h2>
