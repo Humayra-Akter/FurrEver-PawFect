@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import adoption from "../../images/adoption.png";
 import petCare from "../../images/pet-care.png";
 import vet from "../../images/vet-clinic.png";
 import forum from "../../images/forum.png";
 import events from "../../images/events.png";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const features = [
   {
@@ -44,6 +46,10 @@ const features = [
 ];
 
 const KeyFeatures = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000 });
+  }, []);
+
   return (
     <div
       className="mt-24"
@@ -54,22 +60,22 @@ const KeyFeatures = () => {
       <h2 className="uppercase justify-end text-center text-3xl font-black text-primary dark:text-secondary">
         Key Features
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 mt-20 mx-20 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 mt-16 mx-20 gap-6">
         {features.map((feature, index) => (
           <div
             key={index}
-            className="card w-full bg-base-100 shadow-xl p-4 flex flex-col items-center  transform transition duration-500 hover:opacity-80"
+            data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
+            className="relative card w-full bg-base-100 shadow-xl p-4 items-center transform transition duration-500"
           >
-            <figure>
+            <div className="absolute -top-10 w-20 h-20 flex justify-center items-center">
               <img
                 src={feature.img}
                 alt={feature.alt}
-                className="w-28 h-28 rounded-lg"
+                className="w-20 h-20 rounded-full border-4 border-primary bg-white"
               />
-            </figure>
-            <div className="card-body flex-grow flex flex-col justify-between items-center">
-              {" "}
-              <h2 className="font-black uppercase text-primary text-center">
+            </div>
+            <div className="card-body flex flex-col justify-between items-center -mt-10">
+              <h2 className="font-black uppercase text-primary text-center mt-10">
                 {feature.title}
               </h2>
               <p className="text-center font-bold text-sm">
