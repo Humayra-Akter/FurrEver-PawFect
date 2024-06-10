@@ -59,7 +59,12 @@ const CustomerProfile = () => {
   };
 
   return (
-    <div className="mt-10 min-h-screen p-4">
+    <div
+      className="mt-10 min-h-screen p-4"
+      style={{
+        fontFamily: "'Concert One', cursive",
+      }}
+    >
       <div
         style={{
           background: `url(${bg})`,
@@ -67,12 +72,12 @@ const CustomerProfile = () => {
         }}
         className="max-w-3xl mx-auto border-4 border-accent bg-white rounded p-6 shadow-md"
       >
-        <h2 className="text-2xl text-secondary font-mono text-center font-bold mb-7">
+        <h2 className="text-2xl text-secondary    text-center font-bold mb-7">
           Your Profile
         </h2>
         <div className="grid grid-cols-2 gap-5">
           <div className="mb-4">
-            <label className="block font-mono font-bold mb-2">Name:</label>
+            <label className="block    font-bold mb-2">Name:</label>
             <input
               type="text"
               value={loggedUser.name}
@@ -84,7 +89,7 @@ const CustomerProfile = () => {
             />
           </div>
           <div className="mb-4">
-            <label className="block  font-mono font-bold mb-2">Email:</label>
+            <label className="block     font-bold mb-2">Email:</label>
             <input
               type="email"
               value={loggedUser.email}
@@ -98,7 +103,7 @@ const CustomerProfile = () => {
         </div>{" "}
         <div className="grid grid-cols-2 gap-5">
           <div className="mb-4">
-            <label className="block font-mono font-bold mb-2">Password:</label>
+            <label className="block    font-bold mb-2">Password:</label>
             <input
               type="password"
               value={loggedUser.password}
@@ -111,7 +116,7 @@ const CustomerProfile = () => {
           </div>
 
           <div className="mb-4">
-            <label className="block font-mono font-bold mb-2">Role:</label>
+            <label className="block    font-bold mb-2">Role:</label>
             <input
               type="text"
               value={loggedUser.role}
@@ -124,7 +129,7 @@ const CustomerProfile = () => {
           {!editable && (
             <button
               onClick={handleEdit}
-              className="bg-primary hover:bg-secondary hover:text-primary text-secondary font-mono font-bold py-2 px-4 rounded"
+              className="bg-primary hover:bg-secondary hover:text-primary text-secondary    font-bold py-2 px-4 rounded"
             >
               Edit
             </button>

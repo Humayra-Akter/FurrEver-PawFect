@@ -70,7 +70,11 @@ const Login = () => {
 
   return (
     <div
-      style={{ background: `url(${bg})`, backgroundSize: "cover" }}
+      style={{
+        background: `url(${bg})`,
+        backgroundSize: "cover",
+        fontFamily: "'Concert One', cursive",
+      }}
       className="pb-20 pt-16"
     >
       <div className="absolute top-16 inset-0 bg-gradient-to-r from-black to-transparent"></div>
@@ -81,7 +85,7 @@ const Login = () => {
         <div className="card bg-transparent border-primary border-2 shadow-xl">
           <div>
             <div className="card-body">
-              <h1 className="text-center text-2xl text-secondary font-mono font-extrabold">
+              <h1 className="text-center text-2xl text-secondary    font-extrabold">
                 LOGIN
               </h1>
 
@@ -89,7 +93,7 @@ const Login = () => {
                 {/* email field */}
                 <div className="form-control w-full pb-2">
                   <label className="label">
-                    <span className="label-text font-mono font-bold text-md">
+                    <span className="label-text    font-bold text-md">
                       Email
                     </span>
                   </label>
@@ -125,7 +129,7 @@ const Login = () => {
                 {/* role field */}
                 <div className="form-control w-full pb-2">
                   <label className="label">
-                    <span className="label-text font-mono font-bold text-md">
+                    <span className="label-text    font-bold text-md">
                       Select your Role
                     </span>
                   </label>
@@ -157,7 +161,7 @@ const Login = () => {
                 {/* Password field */}
                 <div className="form-control w-full pb-4">
                   <label className="label">
-                    <span className="label-text font-mono font-bold text-md">
+                    <span className="label-text    font-bold text-md">
                       Password
                     </span>
                   </label>
@@ -214,13 +218,13 @@ const Login = () => {
                 {signInError}
                 <p className="text-left mb-2">
                   <small className="font-semibold">
-                    <Link className="font-mono" to="/register">
+                    <Link className="  " to="/register">
                       Forgot password?
                     </Link>
                   </small>
                 </p>
                 <input
-                  className="btn btn-sm text-xs w-full border-accent text-secondary font-bold font-mono bg-primary"
+                  className="btn btn-sm text-xs w-full border-accent text-secondary font-bold    bg-primary"
                   value="LOGIN"
                   type="submit"
                 />
@@ -228,7 +232,7 @@ const Login = () => {
               <p className="text-center">
                 <small className="font-semibold">
                   New to FurrEver-PawFect?{" "}
-                  <Link className="font-mono text-green-700" to="/register">
+                  <Link className="   text-green-700" to="/register">
                     Create new account
                   </Link>
                 </small>
@@ -236,7 +240,7 @@ const Login = () => {
               <div className="divider text-secondary">OR</div>
               <button
                 onClick={() => signInWithGoogle()}
-                className="btn btn-sm text-xs w-full border-accent text-secondary font-bold font-mono bg-primary"
+                className="btn btn-sm text-xs w-full border-accent text-secondary font-bold    bg-primary"
               >
                 Continue with Google
               </button>

@@ -17,7 +17,11 @@ const Navbar = () => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        fontFamily: "'Concert One', cursive",
+      }}
+    >
       <div className="navbar bg-primary h-16">
         <div className="navbar-start">
           <div className="dropdown">
@@ -77,10 +81,10 @@ const Navbar = () => {
             <div className="flex gap-4">
               <img src={icon} className="h-14" />
               <div>
-                <p className="uppercase mt-4 font-bold text-left font-mono text-sm text-secondary">
+                <p className="uppercase mt-4 font-bold text-left    text-sm text-secondary">
                   {user?.displayName}
                 </p>
-                <p className="font-mono text-left text-xs text-secondary">
+                <p className="   text-left text-xs text-secondary">
                   {userRole}
                 </p>
               </div>

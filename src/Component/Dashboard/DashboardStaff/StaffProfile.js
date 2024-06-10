@@ -23,9 +23,14 @@ const StaffProfile = () => {
   };
 
   return (
-    <div className="p-6 rounded-lg mt-10">
+    <div
+      className="p-6 rounded-lg mt-10"
+      style={{
+        fontFamily: "'Concert One', cursive",
+      }}
+    >
       <section className="mb-8">
-        <h2 className="text-xl font-bold font-mono text-secondary mb-4">
+        <h2 className="text-xl font-bold    text-secondary mb-4">
           Personal Information
         </h2>
         <div className="bg-gray-100 p-4 text-black rounded-lg shadow-md">
@@ -48,7 +53,7 @@ const StaffProfile = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-bold font-mono text-secondary mb-4">
+        <h2 className="text-xl font-bold    text-secondary mb-4">
           Work Schedule
         </h2>
         <div className="bg-gray-100 text-black p-4 rounded-lg shadow-md">
@@ -63,7 +68,7 @@ const StaffProfile = () => {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-bold font-mono text-secondary mb-4">
+        <h2 className="text-xl font-bold    text-secondary mb-4">
           Recent Activities
         </h2>
         <div className="bg-gray-100 p-4 rounded-lg text-black shadow-md">

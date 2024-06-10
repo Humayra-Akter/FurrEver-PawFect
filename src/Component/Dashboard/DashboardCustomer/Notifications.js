@@ -43,11 +43,14 @@ const Notifications = () => {
   };
 
   return (
-    <div className="p-6 min-h-screen mt-10 rounded-lg">
+    <div
+      className="p-6 min-h-screen mt-10 rounded-lg"
+      style={{
+        fontFamily: "'Concert One', cursive",
+      }}
+    >
       <div className="flex justify-between items-center mb-4">
-        <h1 className="text-xl font-mono font-bold text-secondary">
-          Notifications
-        </h1>
+        <h1 className="text-xl    font-bold text-secondary">Notifications</h1>
         <button
           onClick={clearNotifications}
           className="bg-primary hover:bg-secondary hover:text-primary text-secondary font-bold py-2 px-4 rounded"

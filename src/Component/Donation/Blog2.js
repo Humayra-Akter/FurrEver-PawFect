@@ -2,7 +2,12 @@ import React from "react";
 
 const Blog2 = () => {
   return (
-    <div className="my-20 mx-auto max-w-6xl font-mono text-justify">
+    <div
+      className="my-20 mx-auto max-w-6xl    text-justify"
+      style={{
+        fontFamily: "'Concert One', cursive",
+      }}
+    >
       {" "}
       <h1 className="text-center text-secondary mb-7 text-2xl font-bold">
         Share Your Adoption Stories

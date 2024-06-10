@@ -3,10 +3,15 @@ import bg from "../../../images/card-bg.jpg";
 
 const CustomerFeedback = () => {
   return (
-    <div className="p-6 mt-10">
+    <div
+      className="p-6 mt-10"
+      style={{
+        fontFamily: "'Concert One', cursive",
+      }}
+    >
       {/* Feedback History Section */}
       <div className="mb-8">
-        <h3 className="text-xl text-secondary font-mono font-semibold mb-4">
+        <h3 className="text-xl text-secondary    font-semibold mb-4">
           Feedback History
         </h3>
         <div className="space-y-6">
@@ -18,10 +23,8 @@ const CustomerFeedback = () => {
             }}
             className="border-2 border-accent bg-white rounded p-4 shadow-md"
           >
-            <div className="flex justify-between items-center text-white font-mono mb-3 border-b pb-3">
-              <span className="text-lg font-mono font-semibold">
-                Feedback #001
-              </span>
+            <div className="flex justify-between items-center text-white    mb-3 border-b pb-3">
+              <span className="text-lg    font-semibold">Feedback #001</span>
               <span className="text-rose-500">Date: 2024-05-22</span>
             </div>
             <div className="text-gray-400 mb-2">
@@ -40,13 +43,13 @@ const CustomerFeedback = () => {
         }}
         className="border-2 border-accent bg-white rounded p-4 shadow-md"
       >
-        <h3 className="text-xl text-secondary mt-5 font-mono font-semibold mb-4">
+        <h3 className="text-xl text-secondary mt-5    font-semibold mb-4">
           Submit New Feedback{" "}
         </h3>
         <form className="space-y-4">
           <div>
             <label
-              className="block text-orange-300 font-mono font-medium mb-2"
+              className="block text-orange-300    font-medium mb-2"
               htmlFor="feedbackTitle"
             >
               Title
@@ -61,7 +64,7 @@ const CustomerFeedback = () => {
 
           <div>
             <label
-              className="block text-orange-300 font-mono font-medium mb-2"
+              className="block text-orange-300    font-medium mb-2"
               htmlFor="feedbackContent"
             >
               Feedback
@@ -74,7 +77,7 @@ const CustomerFeedback = () => {
             ></textarea>
           </div>
           <div className="text-right">
-            <button className="bg-primary hover:bg-secondary w-36 hover:text-primary text-secondary font-mono font-bold py-2 px-4 rounded">
+            <button className="bg-primary hover:bg-secondary w-36 hover:text-primary text-secondary    font-bold py-2 px-4 rounded">
               Submit
             </button>
           </div>

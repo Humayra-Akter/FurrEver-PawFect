@@ -4,10 +4,15 @@ import { Link, Outlet } from "react-router-dom";
 const DashboardStaff = () => {
   return (
     <div>
-      <div className="drawer lg:drawer-open">
+      <div
+        className="drawer lg:drawer-open"
+        style={{
+          fontFamily: "'Concert One', cursive",
+        }}
+      >
         <input id="staff-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-left">
-          <h1 className="w-full h-full font-extrabold text-left text-5xl text-secondary font-mono pl-4 pt-7">
+          <h1 className="w-full h-full font-extrabold text-left text-5xl text-secondary    pl-4 pt-7">
             Dashboard
           </h1>
           <Outlet />
@@ -24,7 +29,7 @@ const DashboardStaff = () => {
             <li>
               <Link
                 to="/staffDashboard"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full pt-20 uppercase h-full font-bold font-mono text-center text-sm text-secondary"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full pt-20 uppercase h-full font-bold    text-center text-sm text-secondary"
               >
                 👉 Staff Info
               </Link>
@@ -32,7 +37,7 @@ const DashboardStaff = () => {
             <li>
               <Link
                 to="/staffDashboard/staffFindCabin"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold    text-center text-sm text-secondary"
               >
                 👉 Find Cabin
               </Link>
@@ -40,7 +45,7 @@ const DashboardStaff = () => {
             <li>
               <Link
                 to="/staffDashboard/staffDaycareAnimal"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold    text-center text-sm text-secondary"
               >
                 👉 Daycare Animal
               </Link>
@@ -48,7 +53,7 @@ const DashboardStaff = () => {
             <li>
               <Link
                 to="/staffDashboard/staffRescuedAnimal"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold    text-center text-sm text-secondary"
               >
                 👉 Rescued Animal
               </Link>
@@ -56,7 +61,7 @@ const DashboardStaff = () => {
             <li>
               <Link
                 to="/staffDashboard/staffSchedules"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold    text-center text-sm text-secondary"
               >
                 👉 Staff Schedules
               </Link>
@@ -64,7 +69,7 @@ const DashboardStaff = () => {
             <li>
               <Link
                 to="/staffDashboard/staffReports"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold    text-center text-sm text-secondary"
               >
                 👉 Reports
               </Link>
@@ -72,7 +77,7 @@ const DashboardStaff = () => {
             <li>
               <Link
                 to="/staffDashboard/staffInventory"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold    text-center text-sm text-secondary"
               >
                 👉 Inventory
               </Link>
@@ -80,7 +85,7 @@ const DashboardStaff = () => {
             <li>
               <Link
                 to="/staffDashboard/staffTasks"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold    text-center text-sm text-secondary"
               >
                 👉 Tasks
               </Link>
@@ -88,7 +93,7 @@ const DashboardStaff = () => {
             <li>
               <Link
                 to="/staffDashboard/staffMessages"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold    text-center text-sm text-secondary"
               >
                 👉 Messages
               </Link>

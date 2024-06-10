@@ -63,10 +63,13 @@ const StaffFindCabin = () => {
   };
 
   return (
-    <div className="p-6 mt-10 rounded-lg min-h-screen">
-      <h1 className="text-2xl font-bold font-mono text-secondary mb-4">
-        Find Cabin
-      </h1>
+    <div
+      className="p-6 mt-10 rounded-lg min-h-screen"
+      style={{
+        fontFamily: "'Concert One', cursive",
+      }}
+    >
+      <h1 className="text-2xl font-bold    text-secondary mb-4">Find Cabin</h1>
       <input
         type="text"
         placeholder="Search cabins..."
@@ -77,22 +80,22 @@ const StaffFindCabin = () => {
         <table className="min-w-full divide-y divide-gray-200 shadow-md rounded-md">
           <thead className="bg-gray-500">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-semibold font-mono text-white uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-semibold    text-white uppercase tracking-wider">
                 Cabin Name
               </th>
-              <th className="px-6 py-3 text-left text-xs font-semibold font-mono text-white uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-semibold    text-white uppercase tracking-wider">
                 Location
               </th>
-              <th className="px-6 py-3 text-left text-xs font-semibold font-mono text-white uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-semibold    text-white uppercase tracking-wider">
                 Status
               </th>
-              <th className="px-6 py-3 text-left text-xs font-semibold font-mono text-white uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-semibold    text-white uppercase tracking-wider">
                 Type
               </th>
-              <th className="px-6 py-3 text-left text-xs font-semibold font-mono text-white uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-semibold    text-white uppercase tracking-wider">
                 Animals
               </th>
-              <th className="px-6 py-3 text-left text-xs font-semibold font-mono text-white uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-semibold    text-white uppercase tracking-wider">
                 Staff
               </th>
             </tr>

@@ -104,6 +104,7 @@ const Register = () => {
       style={{
         background: `url(${bg})`,
         backgroundSize: "cover",
+        fontFamily: "'Concert One', cursive",
       }}
       className="pb-20 pt-24"
     >
@@ -119,7 +120,7 @@ const Register = () => {
             className="card bg-transparent border-primary border shadow-xl w-1/3"
           >
             <div className="card-body">
-              <h1 className="text-center text-2xl text-secondary font-mono font-extrabold mt-4 mb-6">
+              <h1 className="text-center text-2xl text-secondary    font-extrabold mt-4 mb-6">
                 Choose Role
               </h1>
               <div className="form-control w-full pb-4">
@@ -128,7 +129,7 @@ const Register = () => {
                     selectedRole === "admin"
                       ? "bg-primary text-secondary"
                       : "bg-gray-600 text-white"
-                  } w-full py-1 gap-2 font-mono flex items-center justify-center rounded mb-4`}
+                  } w-full py-1 gap-2    flex items-center justify-center rounded mb-4`}
                   onClick={() => handleRoleSelection("admin")}
                 >
                   <img src={admin} className="w-10" />
@@ -139,7 +140,7 @@ const Register = () => {
                     selectedRole === "staff"
                       ? "bg-primary text-secondary"
                       : "bg-gray-600 text-white"
-                  }  w-full py-1 gap-2 flex items-center font-mono justify-center rounded mb-4`}
+                  }  w-full py-1 gap-2 flex items-center    justify-center rounded mb-4`}
                   onClick={() => handleRoleSelection("staff")}
                 >
                   <img src={staff} className="w-10" />
@@ -150,7 +151,7 @@ const Register = () => {
                     selectedRole === "vet"
                       ? "bg-primary text-secondary"
                       : "bg-gray-600 text-white"
-                  }  w-full py-1 gap-2 font-mono flex items-center justify-center rounded mb-4`}
+                  }  w-full py-1 gap-2    flex items-center justify-center rounded mb-4`}
                   onClick={() => handleRoleSelection("vet")}
                 >
                   <img src={vet} className="w-10" />
@@ -161,7 +162,7 @@ const Register = () => {
                     selectedRole === "customer"
                       ? "bg-primary text-secondary"
                       : "bg-gray-600 text-white"
-                  }  w-full py-1 gap-2  font-mono flex items-center justify-center rounded mb-4`}
+                  }  w-full py-1 gap-2     flex items-center justify-center rounded mb-4`}
                   onClick={() => handleRoleSelection("customer")}
                 >
                   <img src={customer} className="w-10" />
@@ -184,14 +185,14 @@ const Register = () => {
             className="card bg-transparent border-primary border shadow-xl w-2/3"
           >
             <div className="card-body">
-              <h1 className="text-center text-2xl text-secondary font-mono font-extrabold">
+              <h1 className="text-center text-2xl text-secondary    font-extrabold">
                 REGISTER
               </h1>
               <form onSubmit={handleSubmit(onSubmit)}>
                 {/* name  */}
                 <div className="form-control w-full pb-2">
                   <label className="label">
-                    <span className="label-text font-mono font-bold text-md">
+                    <span className="label-text    font-bold text-md">
                       Name
                     </span>
                   </label>
@@ -218,7 +219,7 @@ const Register = () => {
                 {/* email  */}
                 <div className="form-control w-full pb-2">
                   <label className="label">
-                    <span className="label-text font-mono font-bold text-md">
+                    <span className="label-text    font-bold text-md">
                       Email
                     </span>
                   </label>
@@ -254,7 +255,7 @@ const Register = () => {
                 {/* pass  */}
                 <div className="form-control w-full pb-6">
                   <label className="label">
-                    <span className="label-text font-mono font-bold text-md">
+                    <span className="label-text    font-bold text-md">
                       Password
                     </span>
                   </label>
@@ -289,14 +290,14 @@ const Register = () => {
                 </div>
                 {signInError}
                 <input
-                  className="btn btn-sm text-xs w-full border-accent text-secondary font-bold font-mono bg-primary"
+                  className="btn btn-sm text-xs w-full border-accent text-secondary font-bold    bg-primary"
                   value="REGISTER"
                   type="submit"
                 />
                 <p className="text-center">
                   <small className="font-semibold">
                     Already have an account?{" "}
-                    <Link className="text-green-700 font-mono" to="/login">
+                    <Link className="text-green-700   " to="/login">
                       Login
                     </Link>
                   </small>
@@ -304,7 +305,7 @@ const Register = () => {
                 <div className="divider text-secondary">OR</div>
                 <button
                   onClick={() => signInWithGoogle()}
-                  className="btn btn-sm text-xs w-full border-accent text-secondary font-bold font-mono bg-primary"
+                  className="btn btn-sm text-xs w-full border-accent text-secondary font-bold    bg-primary"
                 >
                   SignIn With Google
                 </button>

@@ -68,8 +68,13 @@ const StaffDaycareAnimal = () => {
   };
 
   return (
-    <div className="p-6 mt-10 rounded-lg">
-      <h1 className="text-2xl font-bold font-mono text-secondary mb-4">
+    <div
+      className="p-6 mt-10 rounded-lg"
+      style={{
+        fontFamily: "'Concert One', cursive",
+      }}
+    >
+      <h1 className="text-2xl font-bold    text-secondary mb-4">
         Daycare Animals
       </h1>
 
@@ -78,7 +83,7 @@ const StaffDaycareAnimal = () => {
           background: `url(${bg})`,
           backgroundSize: "cover",
         }}
-        className=" border-4 mb-6 font-mono border-accent bg-white p-4 shadow-md"
+        className=" border-4 mb-6    border-accent bg-white p-4 shadow-md"
         onSubmit={handleSubmit}
       >
         <h2 className="text-xl text-white font-bold mb-4">Add New Animal</h2>
@@ -162,19 +167,19 @@ const StaffDaycareAnimal = () => {
         <table className="min-w-full divide-y divide-gray-200 shadow-md rounded-md">
           <thead className="bg-gray-500">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-semibold font-mono text-white uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-semibold    text-white uppercase tracking-wider">
                 Name
               </th>
-              <th className="px-6 py-3 text-left text-xs font-semibold font-mono text-white uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-semibold    text-white uppercase tracking-wider">
                 Type
               </th>
-              <th className="px-6 py-3 text-left text-xs font-semibold font-mono text-white uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-semibold    text-white uppercase tracking-wider">
                 Age
               </th>
-              <th className="px-6 py-3 text-left text-xs font-semibold font-mono text-white uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-semibold    text-white uppercase tracking-wider">
                 Health Status
               </th>
-              <th className="px-6 py-3 text-left text-xs font-semibold font-mono text-white uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-semibold    text-white uppercase tracking-wider">
                 Caretaker
               </th>
             </tr>

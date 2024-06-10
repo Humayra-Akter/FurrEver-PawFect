@@ -4,7 +4,12 @@ import bg from "../../images/card-bg.jpg";
 
 const Contact = () => {
   return (
-    <div className=" py-12">
+    <div
+      className=" py-12"
+      style={{
+        fontFamily: "'Concert One', cursive",
+      }}
+    >
       <div
         style={{
           background: `url(${bg})`,
@@ -23,28 +28,28 @@ const Contact = () => {
             />
           </div>
           <div>
-            <h2 className="text-3xl font-semibold text-secondary mb-6 font-mono">
+            <h2 className="text-3xl font-semibold text-secondary mb-6   ">
               Contact Us
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h3 className="text-xl font-mono text-orange-200 font-semibold mb-3">
+                <h3 className="text-xl    text-orange-200 font-semibold mb-3">
                   Our Address
                 </h3>
-                <p className="font-mono">1414 Shopper Place, Bangladesh</p>
+                <p className="  ">1414 Shopper Place, Bangladesh</p>
               </div>
               <div>
-                <h3 className="text-xl text-orange-200 font-semibold mb-3 font-mono">
+                <h3 className="text-xl text-orange-200 font-semibold mb-3   ">
                   Contact Information
                 </h3>
-                <p className="font-mono">Email: contact@example.com</p>
-                <p className=" font-mono">Phone: +880 16292-72142</p>
+                <p className="  ">Email: contact@example.com</p>
+                <p className="   ">Phone: +880 16292-72142</p>
               </div>
             </div>
             <form className="mt-2">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm text-orange-300 font-mono">
+                  <label className="block text-sm text-orange-300   ">
                     Name
                   </label>
                   <input
@@ -53,7 +58,7 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm text-orange-300 font-mono">
+                  <label className="block text-sm text-orange-300   ">
                     Email
                   </label>
                   <input
@@ -63,7 +68,7 @@ const Contact = () => {
                 </div>
               </div>
               <div className="mt-2">
-                <label className="block text-orange-300 text-sm  font-mono">
+                <label className="block text-orange-300 text-sm    ">
                   Message
                 </label>
                 <textarea
@@ -74,7 +79,7 @@ const Contact = () => {
               <div className="mt-3 flex items-end justify-end">
                 <button
                   type="submit"
-                  className="inline py-2 px-4 border border-transparent shadow-sm text-sm rounded-md text-black font-mono font-bold bg-secondary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                  className="inline py-2 px-4 border border-transparent shadow-sm text-sm rounded-md text-black    font-bold bg-secondary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
                 >
                   Submit
                 </button>

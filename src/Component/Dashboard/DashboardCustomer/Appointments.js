@@ -50,10 +50,15 @@ const Appointments = () => {
   };
 
   return (
-    <div className="p-6 shadow-md mt-10 rounded-lg">
+    <div
+      className="p-6 shadow-md mt-10 rounded-lg"
+      style={{
+        fontFamily: "'Concert One', cursive",
+      }}
+    >
       {/* Section for Upcoming Appointments */}
       <section className="mb-10">
-        <h1 className="text-xl font-mono font-bold text-secondary mb-4">
+        <h1 className="text-xl    font-bold text-secondary mb-4">
           Upcoming Appointments
         </h1>
         <div className="space-y-4">
@@ -75,7 +80,7 @@ const Appointments = () => {
 
       {/* Section for Past Appointments */}
       <section className="mb-10">
-        <h1 className="text-xl font-mono font-bold text-secondary mb-4">
+        <h1 className="text-xl    font-bold text-secondary mb-4">
           Past Appointments
         </h1>
         <div className="space-y-4">
@@ -103,15 +108,12 @@ const Appointments = () => {
           }}
           className="border-2 border-gray-700 bg-white max-w-xl rounded p-4 shadow-md"
         >
-          <h2 className="text-xl font-mono font-bold text-secondary mb-4">
+          <h2 className="text-xl    font-bold text-secondary mb-4">
             Book an Appointment
           </h2>
           <form className="space-y-4">
             <div>
-              <label
-                htmlFor="name"
-                className="font-semibold mb-2 font-mono block"
-              >
+              <label htmlFor="name" className="font-semibold mb-2    block">
                 Name
               </label>
               <input
@@ -121,10 +123,7 @@ const Appointments = () => {
               />
             </div>
             <div>
-              <label
-                htmlFor="email"
-                className="font-semibold mb-2 font-mono block"
-              >
+              <label htmlFor="email" className="font-semibold mb-2    block">
                 Email
               </label>
               <input
@@ -134,10 +133,7 @@ const Appointments = () => {
               />
             </div>
             <div>
-              <label
-                htmlFor="date"
-                className="font-semibold mb-2 font-mono block"
-              >
+              <label htmlFor="date" className="font-semibold mb-2    block">
                 Appointment Date
               </label>
               <input
@@ -147,10 +143,7 @@ const Appointments = () => {
               />
             </div>
             <div>
-              <label
-                htmlFor="time"
-                className="font-semibold mb-2 font-mono block"
-              >
+              <label htmlFor="time" className="font-semibold mb-2    block">
                 Appointment Time
               </label>
               <input
@@ -160,10 +153,7 @@ const Appointments = () => {
               />
             </div>
             <div>
-              <label
-                htmlFor="service"
-                className="font-semibold mb-2 font-mono block"
-              >
+              <label htmlFor="service" className="font-semibold mb-2    block">
                 Service
               </label>
               <select
@@ -180,7 +170,7 @@ const Appointments = () => {
             <div className="flex justify-end">
               <button
                 type="submit"
-                className="bg-primary hover:bg-secondary mt-3 hover:text-primary text-secondary font-mono font-bold py-2 px-4 rounded"
+                className="bg-primary hover:bg-secondary mt-3 hover:text-primary text-secondary    font-bold py-2 px-4 rounded"
               >
                 Book Appointment
               </button>
@@ -196,14 +186,14 @@ const Appointments = () => {
           }}
           className="border-2 border-gray-700 bg-white max-w-xl rounded p-4 shadow-md"
         >
-          <h2 className="text-xl font-mono font-bold text-secondary mb-4">
+          <h2 className="text-xl    font-bold text-secondary mb-4">
             Need Help?
           </h2>
           <form className="space-y-4">
             <div>
               <label
                 htmlFor="contact-name"
-                className="font-semibold mb-2 font-mono block"
+                className="font-semibold mb-2    block"
               >
                 Name
               </label>
@@ -216,7 +206,7 @@ const Appointments = () => {
             <div>
               <label
                 htmlFor="contact-email"
-                className="font-semibold mb-2 font-mono block"
+                className="font-semibold mb-2    block"
               >
                 Email
               </label>
@@ -229,7 +219,7 @@ const Appointments = () => {
             <div>
               <label
                 htmlFor="contact-message"
-                className="font-semibold mb-2 font-mono block"
+                className="font-semibold mb-2    block"
               >
                 Message
               </label>
@@ -243,7 +233,7 @@ const Appointments = () => {
             <div className="flex justify-end">
               <button
                 type="submit"
-                className="bg-primary hover:bg-secondary mt-3 hover:text-primary text-secondary font-mono font-bold py-2 px-4 rounded"
+                className="bg-primary hover:bg-secondary mt-3 hover:text-primary text-secondary    font-bold py-2 px-4 rounded"
               >
                 Send Message
               </button>

@@ -48,8 +48,13 @@ const StaffInventory = () => {
   };
 
   return (
-    <div className="p-6 mt-10 rounded-lg">
-      <h1 className="text-2xl font-bold font-mono text-secondary mb-10">
+    <div
+      className="p-6 mt-10 rounded-lg"
+      style={{
+        fontFamily: "'Concert One', cursive",
+      }}
+    >
+      <h1 className="text-2xl font-bold    text-secondary mb-10">
         Inventory Management
       </h1>
 

@@ -3,8 +3,13 @@ import bg from "../../images/card-bg.jpg";
 
 const Feedback = () => {
   return (
-    <div className=" my-20 mx-40">
-      <h2 className="text-3xl font-semibold text-secondary mb-6 text-center font-mono">
+    <div
+      className=" my-20 mx-40"
+      style={{
+        fontFamily: "'Concert One', cursive",
+      }}
+    >
+      <h2 className="text-3xl font-semibold text-secondary mb-6 text-center   ">
         Feedback
       </h2>
       <div className=" py-12">
@@ -17,13 +22,13 @@ const Feedback = () => {
         >
           <div className="mx-20">
             <div>
-              <h2 className="text-3xl font-semibold text-secondary mb-6 font-mono">
+              <h2 className="text-3xl font-semibold text-secondary mb-6   ">
                 Leave Your Feedback
               </h2>{" "}
               <form className="mt-2">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm text-orange-300 font-mono">
+                    <label className="block text-sm text-orange-300   ">
                       Name
                     </label>
                     <input
@@ -32,7 +37,7 @@ const Feedback = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm text-orange-300 font-mono">
+                    <label className="block text-sm text-orange-300   ">
                       Email
                     </label>
                     <input
@@ -42,7 +47,7 @@ const Feedback = () => {
                   </div>
                 </div>
                 <div className="mt-2">
-                  <label className="block text-orange-300 text-sm  font-mono">
+                  <label className="block text-orange-300 text-sm    ">
                     Feedback
                   </label>
                   <textarea
@@ -53,7 +58,7 @@ const Feedback = () => {
                 <div className="mt-3 flex items-end justify-end">
                   <button
                     type="submit"
-                    className="inline py-2 px-4 border border-transparent shadow-sm text-sm rounded-md text-black font-mono font-bold bg-secondary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                    className="inline py-2 px-4 border border-transparent shadow-sm text-sm rounded-md text-black    font-bold bg-secondary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
                   >
                     Submit
                   </button>
@@ -66,7 +71,7 @@ const Feedback = () => {
 
       <section className="mb-6">
         {" "}
-        <h2 className="text-2xl font-semibold text-secondary mb-2 font-mono">
+        <h2 className="text-2xl font-semibold text-secondary mb-2   ">
           Recent Feedback
         </h2>
         <div className="grid grid-cols-2 gap-16">

@@ -33,10 +33,15 @@ const LoyaltyRewards = () => {
   }, []);
 
   return (
-    <div className="p-6 shadow-md mt-10 rounded-lg">
+    <div
+      className="p-6 shadow-md mt-10 rounded-lg"
+      style={{
+        fontFamily: "'Concert One', cursive",
+      }}
+    >
       {/* Section for Points Summary */}
       <section className="mb-10">
-        <h1 className="text-xl font-mono font-bold text-secondary mb-4">
+        <h1 className="text-xl    font-bold text-secondary mb-4">
           Points Summary
         </h1>
         <div className="border rounded-md p-4 shadow-sm">
@@ -48,7 +53,7 @@ const LoyaltyRewards = () => {
 
       {/* Section for Redemption Options */}
       <section className="mb-10">
-        <h1 className="text-xl font-mono font-bold text-secondary mb-4">
+        <h1 className="text-xl    font-bold text-secondary mb-4">
           Redemption Options
         </h1>
         <div className="space-y-4">
@@ -79,7 +84,7 @@ const LoyaltyRewards = () => {
 
       {/* Section for Recent Activities */}
       <section className="mb-10">
-        <h1 className="text-xl font-mono font-bold text-secondary mb-4">
+        <h1 className="text-xl    font-bold text-secondary mb-4">
           Recent Activities
         </h1>
         <div className="space-y-4">
@@ -95,7 +100,7 @@ const LoyaltyRewards = () => {
 
       {/* Section for Contact Support */}
       <section className="mb-10">
-        <h1 className="text-xl font-mono font-bold text-secondary mb-4">
+        <h1 className="text-xl    font-bold text-secondary mb-4">
           Contact Support
         </h1>
         <div className="border rounded-md p-4 shadow-sm">

@@ -40,8 +40,13 @@ const StaffSchedules = () => {
   }, []);
 
   return (
-    <div className="p-6 mt-10 rounded-lg min-h-screen">
-      <h1 className="text-2xl font-bold font-mono text-secondary mb-4">
+    <div
+      className="p-6 mt-10 rounded-lg min-h-screen"
+      style={{
+        fontFamily: "'Concert One', cursive",
+      }}
+    >
+      <h1 className="text-2xl font-bold    text-secondary mb-4">
         Staff Schedules
       </h1>
       <div></div>

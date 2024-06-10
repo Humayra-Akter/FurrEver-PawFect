@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 
 const Donation = () => {
   return (
-    <div className="p-6 space-y-12">
+    <div
+      className="p-6 space-y-12"
+      style={{
+        fontFamily: "'Concert One', cursive",
+      }}
+    >
       {/* Donation Form */}
       <section
         style={{
@@ -13,26 +18,26 @@ const Donation = () => {
         }}
         className=" max-w-4xl border-2 border-accent mx-auto p-6 rounded shadow-md"
       >
-        <h2 className="text-2xl font-mono text-secondary text-center font-bold mb-10">
+        <h2 className="text-2xl    text-secondary text-center font-bold mb-10">
           Donate to Support Our Cause
         </h2>
         <form className="space-y-4">
           <div>
-            <label className="block font-bold font-mono">Full Name</label>
+            <label className="block font-bold   ">Full Name</label>
             <input
               type="text"
               className="w-full bg-slate-200 p-2 border rounded"
             />
           </div>
           <div>
-            <label className="block font-bold font-mono">Email</label>
+            <label className="block font-bold   ">Email</label>
             <input
               type="email"
               className="w-full p-2 border bg-slate-200 rounded"
             />
           </div>
           <div>
-            <label className="block font-bold font-mono">Amount</label>
+            <label className="block font-bold   ">Amount</label>
             <input
               type="number"
               className="w-full bg-slate-200 p-2 border rounded"
@@ -41,7 +46,7 @@ const Donation = () => {
           <div className="flex items-end justify-end">
             <button
               type="submit"
-              className="bg-primary hover:bg-secondary hover:text-primary text-secondary font-mono font-bold py-2 px-4 rounded"
+              className="bg-primary hover:bg-secondary hover:text-primary text-secondary    font-bold py-2 px-4 rounded"
             >
               Donate
             </button>
@@ -76,26 +81,17 @@ const Donation = () => {
         <h2 className="text-2xl font-bold mb-4">Blog Posts</h2>
         <ul className="space-y-2">
           <li className="border-b pb-2">
-            <Link
-              to="/blog1"
-              className="text-secondary font-mono  hover:underline"
-            >
+            <Link to="/blog1" className="text-secondary     hover:underline">
               How Your Donations Help (read)
             </Link>
           </li>
           <li className="border-b pb-2">
-            <Link
-              to="/blog2"
-              className="text-secondary font-mono  hover:underline"
-            >
+            <Link to="/blog2" className="text-secondary     hover:underline">
               Success Stories from Our Shelter (read)
             </Link>
           </li>
           <li className="border-b pb-2">
-            <Link
-              to="/blog3"
-              className="text-secondary font-mono  hover:underline"
-            >
+            <Link to="/blog3" className="text-secondary     hover:underline">
               Volunteer Spotlight: Making a Difference (read)
             </Link>
           </li>
@@ -113,17 +109,17 @@ const Donation = () => {
         <h2 className="text-2xl font-bold mb-4">Forum Discussions</h2>
         <ul className="space-y-2">
           <li className="border-b pb-2">
-            <a href="#" className="text-secondary font-mono  hover:underline">
+            <a href="#" className="text-secondary     hover:underline">
               Best Practices for Animal Care
             </a>
           </li>
           <li className="border-b pb-2">
-            <a href="#" className="text-secondary font-mono  hover:underline">
+            <a href="#" className="text-secondary     hover:underline">
               Share Your Adoption Stories
             </a>
           </li>
           <li className="border-b pb-2">
-            <a href="#" className="text-secondary font-mono  hover:underline">
+            <a href="#" className="text-secondary     hover:underline">
               Tips for New Pet Owners
             </a>
           </li>

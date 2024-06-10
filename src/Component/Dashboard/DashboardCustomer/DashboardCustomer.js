@@ -4,10 +4,19 @@ import { Link, Outlet } from "react-router-dom";
 const customerDashboard = () => {
   return (
     <div>
-      <div className="drawer lg:drawer-open">
-        <input id="customer-drawer-2" type="checkbox" className="drawer-toggle" />
+      <div
+        className="drawer lg:drawer-open"
+        style={{
+          fontFamily: "'Concert One', cursive",
+        }}
+      >
+        <input
+          id="customer-drawer-2"
+          type="checkbox"
+          className="drawer-toggle"
+        />
         <div className="drawer-content flex flex-col items-left">
-          <h1 className="w-full h-full font-extrabold text-left text-5xl text-secondary font-mono pl-4 pt-7">
+          <h1 className="w-full h-full font-extrabold text-left text-5xl text-secondary    pl-4 pt-7">
             Dashboard
           </h1>
           <Outlet />
@@ -24,7 +33,7 @@ const customerDashboard = () => {
             <li>
               <Link
                 to="/customerDashboard"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full pt-20 uppercase h-full font-bold font-mono text-center text-sm text-secondary"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full pt-20 uppercase h-full font-bold    text-center text-sm text-secondary"
               >
                 👉 Profile
               </Link>
@@ -32,7 +41,7 @@ const customerDashboard = () => {
             <li>
               <Link
                 to="/customerDashboard/orderHistory"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold    text-center text-sm text-secondary"
               >
                 👉 Order History
               </Link>
@@ -40,7 +49,7 @@ const customerDashboard = () => {
             <li>
               <Link
                 to="/customerDashboard/customerCabin"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold    text-center text-sm text-secondary"
               >
                 👉 Customer Cabin
               </Link>
@@ -48,7 +57,7 @@ const customerDashboard = () => {
             <li>
               <Link
                 to="/customerDashboard/customerDonation"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold    text-center text-sm text-secondary"
               >
                 👉 Customer Donation
               </Link>
@@ -56,7 +65,7 @@ const customerDashboard = () => {
             <li>
               <Link
                 to="/customerDashboard/customerFeedback"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold    text-center text-sm text-secondary"
               >
                 👉 Customer Feedback
               </Link>
@@ -64,7 +73,7 @@ const customerDashboard = () => {
             <li>
               <Link
                 to="/customerDashboard/customerPrice"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold    text-center text-sm text-secondary"
               >
                 👉 Customer Price
               </Link>
@@ -72,7 +81,7 @@ const customerDashboard = () => {
             <li>
               <Link
                 to="/customerDashboard/appointments"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold    text-center text-sm text-secondary"
               >
                 👉 Appointments
               </Link>
@@ -80,7 +89,7 @@ const customerDashboard = () => {
             <li>
               <Link
                 to="/customerDashboard/notifications"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold    text-center text-sm text-secondary"
               >
                 👉 Notifications
               </Link>
@@ -88,7 +97,7 @@ const customerDashboard = () => {
             <li>
               <Link
                 to="/customerDashboard/loyalty"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold    text-center text-sm text-secondary"
               >
                 👉 Loyalty & Rewards
               </Link>
@@ -96,7 +105,7 @@ const customerDashboard = () => {
             <li>
               <Link
                 to="/customerDashboard/wishlist"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold font-mono text-center text-sm text-secondary"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold    text-center text-sm text-secondary"
               >
                 👉 Wishlist
               </Link>

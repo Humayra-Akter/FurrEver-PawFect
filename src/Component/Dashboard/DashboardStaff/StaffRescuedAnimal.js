@@ -71,8 +71,13 @@ const StaffRescuedAnimal = () => {
   };
 
   return (
-    <div className="p-6 mt-10 rounded-lg">
-      <h1 className="text-2xl font-bold font-mono text-secondary mb-4">
+    <div
+      className="p-6 mt-10 rounded-lg"
+      style={{
+        fontFamily: "'Concert One', cursive",
+      }}
+    >
+      <h1 className="text-2xl font-bold    text-secondary mb-4">
         Rescued Animals
       </h1>
 
@@ -84,12 +89,12 @@ const StaffRescuedAnimal = () => {
         className=" border-4 border-accent mb-6 bg-white p-4 shadow-md"
         onSubmit={handleSubmit}
       >
-        <h2 className="text-xl text-white font-mono font-bold mb-4">
+        <h2 className="text-xl text-white    font-bold mb-4">
           Add New Rescued Animal
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-gray-100 font-mono font-bold mb-2">
+            <label className="block text-gray-100    font-bold mb-2">
               Name
             </label>
             <input
@@ -102,7 +107,7 @@ const StaffRescuedAnimal = () => {
             />
           </div>
           <div>
-            <label className="block text-gray-100 font-mono font-bold mb-2">
+            <label className="block text-gray-100    font-bold mb-2">
               Type
             </label>
             <input
@@ -115,7 +120,7 @@ const StaffRescuedAnimal = () => {
             />
           </div>
           <div>
-            <label className="block text-gray-100 font-mono font-bold mb-2">
+            <label className="block text-gray-100    font-bold mb-2">
               Rescue Date
             </label>
             <input
@@ -128,7 +133,7 @@ const StaffRescuedAnimal = () => {
             />
           </div>
           <div>
-            <label className="block text-gray-100 font-mono font-bold mb-2">
+            <label className="block text-gray-100    font-bold mb-2">
               Health Status
             </label>
             <input
@@ -141,7 +146,7 @@ const StaffRescuedAnimal = () => {
             />
           </div>
           <div className="md:col-span-2">
-            <label className="block text-gray-100 font-mono font-bold mb-2">
+            <label className="block text-gray-100    font-bold mb-2">
               Caretaker
             </label>
             <input
@@ -156,7 +161,7 @@ const StaffRescuedAnimal = () => {
         </div>
         <button
           type="submit"
-          className="mt-4 bg-primary text-white font-mono font-bold py-2 px-4 rounded hover:bg-secondary hover:text-primary"
+          className="mt-4 bg-primary text-white    font-bold py-2 px-4 rounded hover:bg-secondary hover:text-primary"
         >
           Add Animal
         </button>
@@ -166,19 +171,19 @@ const StaffRescuedAnimal = () => {
         <table className="min-w-full divide-y divide-gray-200 shadow-md rounded-md">
           <thead className="bg-gray-500">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-semibold font-mono text-white uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-semibold    text-white uppercase tracking-wider">
                 Name
               </th>
-              <th className="px-6 py-3 text-left text-xs font-semibold font-mono text-white uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-semibold    text-white uppercase tracking-wider">
                 Type
               </th>
-              <th className="px-6 py-3 text-left text-xs font-semibold font-mono text-white uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-semibold    text-white uppercase tracking-wider">
                 Rescue Date
               </th>
-              <th className="px-6 py-3 text-left text-xs font-semibold font-mono text-white uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-semibold    text-white uppercase tracking-wider">
                 Health Status
               </th>
-              <th className="px-6 py-3 text-left text-xs font-semibold font-mono text-white uppercase tracking-wider">
+              <th className="px-6 py-3 text-left text-xs font-semibold    text-white uppercase tracking-wider">
                 Caretaker
               </th>
             </tr>

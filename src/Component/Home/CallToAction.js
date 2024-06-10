@@ -2,8 +2,13 @@ import React from "react";
 
 const CallToAction = () => {
   return (
-    <div className="mt-24">
-      <h2 className="uppercase font-mono justify-end text-center text-3xl font-black text-secondary">
+    <div
+      className="mt-24"
+      style={{
+        fontFamily: "'Concert One', cursive",
+      }}
+    >
+      <h2 className="uppercase    justify-end text-center text-3xl font-black text-secondary">
         Call to Action
       </h2>
       <p>

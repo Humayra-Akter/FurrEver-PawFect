@@ -7,22 +7,23 @@ const FaqSection = () => {
       style={{
         background: `url(${bg})`,
         backgroundSize: "cover",
+        fontFamily: "'Concert One', cursive",
       }}
       className="mt-24 pt-12 bg-green-50"
     >
       <div>
-        <h1 className="font-black text-center font-mono text-5xl text-secondary uppercase">
+        <h1 className="font-black text-center    text-5xl text-secondary uppercase">
           Frequently asked Question
         </h1>
       </div>
       <div className="my-5 mx-16 py-8">
         <div className="collapse collapse-arrow text-orange-200">
           <input type="radio" name="my-accordion-1" checked="checked" />
-          <div className="collapse-title text-xl font-bold font-mono text-white">
+          <div className="collapse-title text-xl font-bold    text-white">
             Can I adopt my foster dog or cat?
           </div>
           <div className="collapse-content">
-            <p className="text-orange-200 font-mono text-justify">
+            <p className="text-orange-200    text-justify">
               If the foster family would like to adopt their foster dog or cat,
               an application, adoption fee, and contract are required just as
               they are for everyone. Please understand that we have a process to
@@ -36,13 +37,13 @@ const FaqSection = () => {
             </p>
           </div>
         </div>
-        <div className="collapse collapse-arrow text-orange-200 font-mono">
+        <div className="collapse collapse-arrow text-orange-200   ">
           <input type="radio" name="my-accordion-1" />
-          <div className="collapse-title text-xl font-bold font-mono text-white">
+          <div className="collapse-title text-xl font-bold    text-white">
             Won’t it be hard to give the animal up when they are adopted?
           </div>
           <div className="collapse-content">
-            <p className="text-orange-200 text-justify font-mono">
+            <p className="text-orange-200 text-justify   ">
               The simple answer…yes, of course. If it is easy, you are not doing
               it right. But as hard as it is, from the first to the twentieth,
               knowing that your foster animal is alive, loved and in a permanent
@@ -60,9 +61,9 @@ const FaqSection = () => {
             </p>
           </div>
         </div>
-        <div className="collapse collapse-arrow text-orange-200 font-mono">
+        <div className="collapse collapse-arrow text-orange-200   ">
           <input type="radio" name="my-accordion-1" />
-          <div className="collapse-title text-xl font-bold font-mono text-white">
+          <div className="collapse-title text-xl font-bold    text-white">
             Can I contact your rescue to speak to someone if I still have
             questions?
           </div>
@@ -79,11 +80,11 @@ const FaqSection = () => {
         </div>
         <div className="collapse collapse-arrow text-orange-200">
           <input type="radio" name="my-accordion-1" />
-          <div className="collapse-title text-xl font-bold font-mono text-white">
+          <div className="collapse-title text-xl font-bold    text-white">
             Will my foster dog be house-trained?
           </div>
           <div className="collapse-content">
-            <p className="text-orange-200 text-justify font-mono">
+            <p className="text-orange-200 text-justify   ">
               Fostering 101: Pee happens! Sometimes you will get lucky however,
               even with a dog that may have been house-trained previously, there
               have been major changes in these animals lives and this can cause
