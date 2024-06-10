@@ -2,13 +2,14 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBjVJnW85GrRjnVGc1cSIvjvB7DD-ilEA4",
-  authDomain: "furrever-pawfect.firebaseapp.com",
-  projectId: "furrever-pawfect",
-  storageBucket: "furrever-pawfect.appspot.com",
-  messagingSenderId: "906237685291",
-  appId: "1:906237685291:web:e470b793d718bc738ac46e",
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
+
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
