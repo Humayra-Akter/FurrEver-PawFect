@@ -79,7 +79,7 @@ const Contact = () => {
               <div className="mt-3 flex items-end justify-end">
                 <button
                   type="submit"
-                  className="inline py-2 px-4 border border-transparent shadow-sm text-sm rounded-md text-black    font-bold bg-secondary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                  className="inline py-2 px-4 border shadow-sm text-sm rounded-md text-white hover:text-black bg-primary dark:text-black hover:dark:text-white dark:bg-secondary hover:bg-secondary hover:dark:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transform transition duration-500"
                 >
                   Submit
                 </button>

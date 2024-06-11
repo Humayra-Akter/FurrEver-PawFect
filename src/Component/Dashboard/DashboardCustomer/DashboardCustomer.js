@@ -57,7 +57,7 @@ const customerDashboard = () => {
             <li>
               <Link
                 to="/customerDashboard/customerDonation"
-                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold    text-center text-sm text-secondary"
+                className="transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none w-full uppercase h-full font-bold  text-center text-sm text-secondary"
               >
                 👉 Customer Donation
               </Link>
