@@ -17,13 +17,7 @@ const Contact = () => {
     >
       <div className="lg:max-w-5xl mx-auto">
         <div className=" py-12">
-          <div
-            style={{
-              background: `url(${bg})`,
-              backgroundSize: "cover",
-            }}
-            className="mx-auto border-4 border-accent shadow-lg rounded-lg p-6"
-          >
+          <div className="mx-auto border-4 border-accent shadow-lg rounded-lg p-6">
             <div className="mx-20">
               <div>
                 <h2 className="text-3xl font-semibold text-secondary mb-6  ">
@@ -87,12 +81,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <div
-          style={{
-            background: `url(${bg})`,
-            backgroundSize: "cover",
-          }}
-        >
+        <div>
           {/* Social Media */}
           <div className="mx-auto border-4 border-accent shadow-lg rounded-lg p-6">
             <h2 className="text-xl font-semibold text-secondary mb-6  mx-20">
