@@ -38,6 +38,7 @@ import StaffReports from "./Component/Dashboard/DashboardStaff/StaffReports";
 import StaffInventory from "./Component/Dashboard/DashboardStaff/StaffInventory";
 import StaffTasks from "./Component/Dashboard/DashboardStaff/StaffTasks";
 import StaffMessages from "./Component/Dashboard/DashboardStaff/StaffMessages";
+import Signin from "./Component/Login/Signin";
 
 function App() {
   const [user, setUser] = useState("");
@@ -66,6 +67,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/signin" element={<Signin />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Services />} />
           <Route path="/feedback" element={<Feedback />} />
@@ -76,7 +78,6 @@ function App() {
           {/* <Route path="/dashboard" element={<Dashboard />} /> */}
           {user === "customer" ? (
             <>
-              {" "}
               <Route path="customerDashboard" element={<DashboardCustomer />}>
                 <Route index element={<CustomerProfile />}></Route>
                 <Route path="orderHistory" element={<OrderHistory />}></Route>
